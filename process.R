@@ -48,6 +48,8 @@ d = d |>
       !ik_verb ~ lemma_ipa
     ),
     stem_is_c_final = str_detect(stem, paste0(consonant,'$')),
+    stem_final_cluster = str_extract(stem, paste0(consonant,'+$')),
+    stem_final_segment = str_extract(stem, paste0(consonant,'$')),
     linking_vowel_present = stem_is_c_final & str_detect(form_ipa, paste0(vowel, suffix, '$')),
     linking_vowel = case_when(
       linking_vowel_present ~ str_extract(form_ipa, paste0(vowel, '(?=', suffix, '$)'))
@@ -62,7 +64,7 @@ d |>
 
 lv = d |> 
   filter(stem_is_c_final,linking_vowel_present) |> 
-  select(lemma,form,lemma_ipa,form_ipa,xpostag,linking_vowel,freq,lemma_freq) |> 
+  select(lemma,form,lemma_ipa,form_ipa,stem,stem_final_segment,stem_final_cluster,xpostag,linking_vowel,freq,lemma_freq) |> 
   rename(lv_form = form, lv_form_ipa = form_ipa, lv_freq = freq)
 
 nlv = d |> 
