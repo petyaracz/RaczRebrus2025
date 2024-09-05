@@ -1,0 +1,1 @@
+add info on segment makeup to consonants in final cluster, do something with it

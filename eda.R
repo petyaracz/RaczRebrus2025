@@ -13,44 +13,21 @@ d |>
   mutate(log_lemma_freq = log(lemma_freq)) |> 
   ggplot(aes(log_lemma_freq, lv_log_odds)) +
   facet_wrap( ~ xpostag) +
-  geom_point()
+  geom_point() +
+  geom_smooth()
 
-c1 = d |> 
-  count(stem_final_segment, sort = T) |> 
-  filter(n >= 10) |> 
-  pull(stem_final_segment)
-
-c2 = d |> 
-  count(stem_final_cluster, sort = T) |> 
-  filter(n >= 10) |> 
-  pull(stem_final_cluster)
-
-s1 = d |> 
-  summarise(mean = mean(lv_log_odds), .by = stem_final_segment) |> 
-  mutate(stem_final_segment = fct_reorder(stem_final_segment, mean)) |> 
-  pull(stem_final_segment) |> 
-  levels()
-
-s2 = d |> 
-  summarise(mean = mean(lv_log_odds), .by = stem_final_cluster) |> 
-  mutate(stem_final_cluster = fct_reorder(stem_final_cluster, mean)) |> 
-  pull(stem_final_cluster) |> 
-  levels()
+clusters = d |> 
+  summarise(mean = mean(lv_log_odds), n = n(), .by = stem_final_cluster) |> 
+  mutate(
+    cluster = ifelse(n > 10, stem_final_cluster, 'other') |> 
+      fct_reorder(mean)
+  )
 
 d |> 
-  mutate(stem_final_segment = factor(stem_final_segment, levels = s1)) |> 
-  filter(stem_final_segment %in% c1) |> 
-  ggplot(aes(x = stem_final_segment, lv_log_odds)) +
+  left_join(clusters) |> 
+  ggplot(aes(x = cluster, lv_log_odds)) +
   geom_hline(yintercept = 0, lty = 3) +
   geom_boxplot() +
   facet_wrap( ~ xpostag) +
   coord_flip()
 
-d |> 
-  mutate(stem_final_cluster = factor(stem_final_cluster, levels = s2)) |> 
-  filter(stem_final_cluster %in% c2) |> 
-  ggplot(aes(x = stem_final_cluster, lv_log_odds)) +
-  geom_hline(yintercept = 0, lty = 3) +
-  geom_boxplot() +
-  facet_wrap( ~ xpostag) +
-  coord_flip()

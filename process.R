@@ -47,7 +47,7 @@ getPairs = function(dat){
   
   nlv = dat |> 
     filter(c_final_stem,!linking_vowel_present) |> 
-    select(lemma,form,lemma_ipa,form_ipa,freq,lemma_freq) |> 
+    select(xpostag,lemma,form,lemma_ipa,form_ipa,freq,lemma_freq) |> 
     rename(nlv_form = form, nlv_form_ipa = form_ipa, nlv_freq = freq)
   
   inner_join(lv,nlv) |> 
