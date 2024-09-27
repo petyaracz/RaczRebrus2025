@@ -4,6 +4,7 @@ setwd('~/Github/RaczRebrus2025/')
 
 library(tidyverse)
 library(glue)
+library(hunspell)
 
 # -- fun -- #
 
@@ -63,7 +64,10 @@ getPairs = function(dat){
 vowel = '[aáeéiíoóöőuúüű]'
 consonant = '[^aáeéiíoóöőuúüű]'
 
+# corpus data
 d = read_tsv('past_acc_hun_webcorpus2_hunspell.gz')
+# segmental phonology
+s = read_tsv('~/Github/published/Racz2024b/dat/feature_matrices/siptar_torkenczy_toth_racz_hungarian.tsv')
 
 # -- look at three vars separately, clear up -- #
 
@@ -129,11 +133,74 @@ def = d |>
 def_pairs = def |> 
   getPairs()
 
-
 # -- combine -- #
 
 pairs = bind_rows(acc_pairs,def_pairs,ndef_pairs)
 
+# -- separate final segments -- #
+
+pairs = pairs |> 
+  mutate(
+    ultimate_c = str_extract(stem_final_cluster, '.$'),
+    penultimate_c = case_when(
+      nchar(stem_final_cluster) > 1 ~ str_extract(stem_final_cluster, '.(?=.$)')
+      )
+  )
+
+# -- some cleaning -- #
+
+pairs = pairs |> 
+  filter(
+    lemma != 'übermensch', lv_form != 'látsdzott',
+    nchar(stem_final_cluster) < 3,
+    !ultimate_c %in% c('x','y','w')
+  )
+
+# -- a lot of cleaning -- #
+
+pairs2 = pairs |> 
+  filter(
+    hunspell_check(lv_form, dict = dictionary('hu_HU')),
+    lv_log_odds < 5.3,
+    lv_log_odds > -5.3
+  )
+
+# -- add segment phono info -- #
+
+s_1 = s |> 
+  rename_with(~ paste0(., "_1"), everything()) |> 
+  rename(ultimate_c = segment_1)
+
+s_2 = s |> 
+  rename_with(~ paste0(., "_2"), everything()) |> 
+  rename(penultimate_c = segment_2)
+
+pairs2 = pairs2 |> 
+  left_join(s_1) |> 
+  left_join(s_2)
+
+# stph:
+# stops, affricates < fricatives << nasals << liquids
+pairs2 = pairs2 |> 
+  mutate(
+    sonority_ultimate_c = case_when(
+      ultimate_c %in% c("c", "ḏ", "t", "č", "ṯ", "d", "g") ~ 4,
+      ultimate_c %in% c("š", "z", "ž", "s") ~ 3,
+      ultimate_c %in% c("ṉ", "n") ~ 2,
+      ultimate_c %in% c("j", "r", "l", "h", "v") ~ 1
+    ),
+    sonority_penultimate_c = case_when(
+      penultimate_c %in% c("c", "ḏ", "t", "č", "ṯ", "d", "g") ~ 4,
+      penultimate_c %in% c("š", "z", "ž", "s") ~ 3,
+      penultimate_c %in% c("ṉ", "n") ~ 2,
+      penultimate_c %in% c("j", "r", "l", "h", "v") ~ 1
+    ),
+    sonority_slope = glue('{sonority_penultimate_c}{sonority_ultimate_c}4')
+  )
+
 # -- write -- #
 
-write_tsv(pairs, 'lv_n_v_pairs.tsv')
+write_tsv(pairs2, 'lv_n_v_pairs.tsv')
+pairs2 |> 
+  # select(lemma,lv_form,nlv_form,lv_freq,nlv_freq,lemma_freq) |> 
+  googlesheets4::write_sheet(ss = 'https://docs.google.com/spreadsheets/d/18TpAK-rI31v7O5EVv1JD0ATsXd83lgKI-ZEZh1Q8L30/edit?usp=sharing', sheet = 'lv_n_v_pairs')
