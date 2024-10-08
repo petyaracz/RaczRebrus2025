@@ -184,18 +184,20 @@ pairs2 = pairs2 |>
 pairs2 = pairs2 |> 
   mutate(
     sonority_ultimate_c = case_when(
-      ultimate_c %in% c("c", "ḏ", "t", "č", "ṯ", "d", "g") ~ 4,
-      ultimate_c %in% c("š", "z", "ž", "s") ~ 3,
-      ultimate_c %in% c("ṉ", "n") ~ 2,
-      ultimate_c %in% c("j", "r", "l", "h", "v") ~ 1
+      ultimate_c %in% c("c", "ḏ", "t", "č", "ṯ", "d", "g") ~ 1,
+      ultimate_c %in% c("š", "z", "ž", "s") ~ 2,
+      ultimate_c %in% c("ṉ", "n") ~ 3,
+      ultimate_c %in% c("j", "r", "l", "h", "v") ~ 4
     ),
     sonority_penultimate_c = case_when(
-      penultimate_c %in% c("c", "ḏ", "t", "č", "ṯ", "d", "g") ~ 4,
-      penultimate_c %in% c("š", "z", "ž", "s") ~ 3,
-      penultimate_c %in% c("ṉ", "n") ~ 2,
-      penultimate_c %in% c("j", "r", "l", "h", "v") ~ 1
+      penultimate_c %in% c("c", "ḏ", "t", "č", "ṯ", "d", "g", "p", "k", "b") ~ 1,
+      penultimate_c %in% c("š", "z", "ž", "s") ~ 2,
+      penultimate_c %in% c("ṉ", "n", "m") ~ 3,
+      penultimate_c %in% c("j", "r", "l", "h", "v") ~ 4,
+      is.na(penultimate_c) ~ 0
     ),
-    sonority_slope = glue('{sonority_penultimate_c}{sonority_ultimate_c}4')
+    sonority_slope = glue::glue('{sonority_penultimate_c}{sonority_ultimate_c}4') |> 
+      as.double()
   )
 
 # -- write -- #
