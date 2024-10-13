@@ -130,7 +130,7 @@ plots = d |>
     ~ . |> 
       mutate(stem_final_cluster = fct_reorder(stem_final_cluster,mean), .by = xpostag) |> 
       ggplot(aes(mean,stem_final_cluster)) +
-      geom_vline(xintercept = 0, lty = 1)
+      geom_vline(xintercept = 0, lty = 1) +
       geom_point() +
       geom_errorbar(aes(xmin=mean-se, xmax=mean+se), width = .25) +
       theme_bw() +
@@ -147,5 +147,5 @@ p2 = plots[[2]] + theme(
 p3 = plots[[3]] + theme(axis.title = element_blank())
 p1 + (p2 / p3) +
   plot_layout(axis_titles = "collect") +
-  plot_annotation(title = 'Q4 CC#')
-ggsave('distributions_se.png', width = 6, height = 10, dpi = 'print')  
+  plot_annotation(title = 'Q4 CC#', tag_levels = 'i', caption = '(i) noun.acc, (ii) verb.past.def.3sg, (iii) verb.past.ndef.3sg')
+ggsave('distributions_se.png', width = 8, height = 10, dpi = 'print')  
