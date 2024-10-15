@@ -1,0 +1,23 @@
+toalternaciokat: is dobjuk ki
+nyitotovekkel mi legyen
+	a lista nem szurte ki oket
+	viszont volt amit igen, pl penz
+		igy legyen: -ak ne. üö -ek ne. es parat kezzel amit mashogy nem lehet (tej csel). roviduloket is ki kell dobni (tél telet)
+hangkiveto tovek ftw
+	torny-ot: tehat az torny es ot, a to torny. hol ny-re hol rny-re vegzodik. orulet. ne.
+alakra es helyesirasra szures
+	tul szigoru, enyhiteni kell, es mas modot talalni a szuresre
+geminatakat ne (hiszen ott lv nelkul degeminacio van, brossot, brost)
+Shra nem vegzodik magyar szo
+hany lemma van, arra is erdemes szurni talan? vagy tokenra
+
+uj elmelet: mi a szofelismerhetoseg? ez hogyan josolja a kotohangzossagot?
+	hany szotagos
+	milyen gyakori a toldalekolt alak
+	milyen gyakori a to
+	milyen gyakori a minden
+	hany szomszedja van
+	burstiness
+	NDL looooool
+		vagy: szovegi klaszter jellege (SZONORITAS)
+	osszetett-e a szo??
