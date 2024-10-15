@@ -68,6 +68,13 @@ consonant = '[^aáeéiíoóöőuúüű]'
 d = read_tsv('past_acc_hun_webcorpus2_hunspell.gz')
 # segmental phonology
 s = read_tsv('~/Github/published/Racz2024b/dat/feature_matrices/siptar_torkenczy_toth_racz_hungarian.tsv')
+# lowering stems
+l = read_tsv('lowering_stems.tsv')
+
+# -- remove lowering stems -- #
+
+d = d |> 
+  filter(!lemma %in% l$lemma)
 
 # -- look at three vars separately, clear up -- #
 
