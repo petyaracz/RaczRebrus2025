@@ -1,5 +1,5 @@
 multido:
-	a -tV igei alakokhoz vagy mindenkit pakolj bele, vagy csak a 3pl indef -tak-ot (mosakodtak) -- inkabb utobbi!
+	a -tV igei alakokhoz vagy mindenkit pakolj bele, vagy csak a 3pl indef -tak-ot (mosakodtak) -- inkabb utobbi! [check]
 igekotokkel mi van???
 toalternaciokat: is dobjuk ki
 nyitotovekkel mi legyen
@@ -8,10 +8,13 @@ nyitotovekkel mi legyen
 		igy legyen: -ak ne. üö -ek ne. es parat kezzel amit mashogy nem lehet (tej csel). roviduloket is ki kell dobni (tél telet)
 hangkiveto tovek ftw
 	torny-ot: tehat az torny es ot, a to torny. hol ny-re hol rny-re vegzodik. orulet. ne.
+	
+	-> ez mind: nezzuk meg, hogy mi van akkor, ha kidobjuk azokat az alakokat, ahol nem fed at a szabad to es a toldalekolt alak (kalapot oke, almát, tornyot, egeret nem oké) [check]
+
 alakra es helyesirasra szures
 	tul szigoru, enyhiteni kell, es mas modot talalni a szuresre
-geminatakat ne (hiszen ott lv nelkul degeminacio van, brossot, brost)
-Shra nem vegzodik magyar szo
+geminatakat ne (hiszen ott lv nelkul degeminacio van, brossot, brost) [check]
+Shra nem vegzodik magyar szo [check]
 hany lemma van, arra is erdemes szurni talan? vagy tokenra
 
 uj elmelet: mi a szofelismerhetoseg? ez hogyan josolja a kotohangzossagot?
