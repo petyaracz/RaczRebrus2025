@@ -69,6 +69,7 @@ d |>
   ggplot(aes(log_lemma_freq,lv_log_odds,colour = compound, label = lemma)) +
   geom_label(alpha = .5) +
   geom_smooth(alpha = .25) +
+  geom_smooth(method = 'lm', se = F, lty = 3) +
   theme_bw() +
   scale_colour_colorblind() +
   xlab('log(lemmafreq)') +
@@ -76,6 +77,10 @@ d |>
 
 
 # -- analysis -- #
+
+d = d |> 
+  filter(!lemma %in% c('nagy','rész','hogy','egy')) |> 
+  mutate(compound = as.factor(compound))
 
 fit1 = stan_glm(cbind(lv_freq,nlv_freq) ~ 1 + log_lemma_freq + compound + length, data = d, family = binomial)
 fit2 = stan_glm(cbind(lv_freq,nlv_freq) ~ 1 + log_lemma_freq * compound + length, data = d, family = binomial)
@@ -88,8 +93,6 @@ checks = plot(check_model(fit1, panel = F))
 checks
 
 # absolutely not.
-
-d$compound = as.factor(d$compound) # not that there is literally any indicator that this is bad
 
 gam1 = gam(cbind(lv_freq,nlv_freq) ~ s(log_lemma_freq, k = 5) + compound + s(length, k = 5), data = d, family = binomial, method = 'ML')
 plot(gam1)

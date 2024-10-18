@@ -145,10 +145,10 @@ setup2 = function(){
 # setup()
 # setup2()
 
-d = googlesheets4::read_sheet('https://docs.google.com/spreadsheets/d/18TpAK-rI31v7O5EVv1JD0ATsXd83lgKI-ZEZh1Q8L30/edit?usp=sharing', 'pass3')
+d = googlesheets4::read_sheet('https://docs.google.com/spreadsheets/d/18TpAK-rI31v7O5EVv1JD0ATsXd83lgKI-ZEZh1Q8L30/edit?usp=sharing', 'pass4')
 
 # -- write -- #
 
-d |> googlesheets4::write_sheet('https://docs.google.com/spreadsheets/d/18TpAK-rI31v7O5EVv1JD0ATsXd83lgKI-ZEZh1Q8L30/edit?usp=sharing', 'pass4')
+d |> googlesheets4::write_sheet('https://docs.google.com/spreadsheets/d/18TpAK-rI31v7O5EVv1JD0ATsXd83lgKI-ZEZh1Q8L30/edit?usp=sharing', 'pass5')
 
-write_tsv(d, 'lv_nlv_pairs_acc.tsv')
+readr::write_tsv(d, 'lv_nlv_pairs_acc.tsv')
