@@ -18,6 +18,36 @@ transcribeIPA = function(string, direction){
   }
 }
 
+# check if thing ends in thing
+findMatch = function(string){
+  vector = unique(d$lemma) # sick hack
+  vector = vector[vector != string]
+  any(str_detect(string,glue('{vector}$')))
+}
+
+# take dat, make pairs
+makePairs = function(dat){
+  
+  lv = dat |> 
+    filter(linking_vowel_present) |> 
+    select(lemma,form,form_transcription,coda,linking_vowel,freq,lemma_freq,compound) |> 
+    rename(lv_word = form, lv_transcription = form_transcription, lv_freq = freq)
+  
+  nlv = d |> 
+    filter(!linking_vowel_present) |> 
+    select(lemma,form,form_transcription,freq) |> 
+    rename(nlv_word = form, nlv_transcription = form_transcription, nlv_freq = freq)
+  
+  pairs = full_join(lv,nlv) |> 
+    mutate(
+      lv_freq = ifelse(is.na(lv_freq),0,lv_freq),
+      nlv_freq = ifelse(is.na(nlv_freq),0,nlv_freq),
+      lv_odds = (lv_freq+1) / (nlv_freq+1),
+      lv_log_odds = log(lv_odds)
+    )
+  
+}
+
 # -- read -- #
 
 c = read_tsv('dat/past_acc_hun_webcorpus2_hunspell.gz')
@@ -48,28 +78,24 @@ d = d |>
     linking_vowel_present = !is.na(linking_vowel)
   )
 
+# -- compounds -- #
+
+d2 = d |> 
+  rowwise() |> 
+  mutate(
+    compound = findMatch(lemma)
+  ) |> 
+  ungroup()
 
 # -- pairs -- #
 
-lv = d |> 
-  filter(linking_vowel_present) |> 
-  select(lemma,form,form_transcription,coda,linking_vowel,freq,lemma_freq) |> 
-  rename(lv_word = form, lv_transcription = form_transcription, lv_freq = freq)
+# actual pairs
+pairs1 = makePairs(d2)
 
-nlv = d |> 
-  filter(!linking_vowel_present) |> 
-  select(lemma,form,form_transcription,freq) |> 
-  rename(nlv_word = form, nlv_transcription = form_transcription, nlv_freq = freq)
-
-pairs = full_join(lv,nlv) |> 
-  mutate(
-    lv_freq = ifelse(is.na(lv_freq),0,lv_freq),
-    nlv_freq = ifelse(is.na(nlv_freq),0,nlv_freq),
-    lv_odds = (lv_freq+1) / (nlv_freq+1),
-    lv_log_odds = log(lv_odds)
-  )
+# pairs over endings
+# ... hmm maybe bad idea
 
 # -- write -- #
 
-write_tsv(d, 'dat/long.tsv')
-write_tsv(pairs, 'dat/wide.tsv')
+write_tsv(d2, 'dat/long.tsv')
+write_tsv(pairs1, 'dat/wide.tsv')
