@@ -35,13 +35,35 @@ w |>
 
 
 w |> 
-  filter(!compound) |> 
+  filter(!is.na(compound)) |> 
+  mutate(
+    count = str_count(lemma, '[aáeéiíoóöőuúüű]'),
+    compound = ifelse(count == 1, F, compound)
+         ) |> 
+  ggplot(aes(as.factor(count),lv_log_odds,colour = compound)) +
+  geom_boxplot()
+
+
+w |> 
+  filter(!is.na(compound)) |> 
   mutate(
     c = str_extract(coda, '^.'),
-    c_is_n = c == 'n'
-         ) |> 
-  ggplot(aes(log(lemma_freq),lv_log_odds,colour = c_is_n)) +
-  geom_point()
+    count = str_count(lemma, '[aáeéiíoóöőuúüű]'),
+    compound = ifelse(count == 1, F, compound)
+  ) |> 
+  ggplot(aes(c,lv_log_odds,colour = compound)) +
+  geom_boxplot()
+# what if second part of compound has more than one syl???
+
+w |> filter(str_count(lemma, '[aáeéiíoóöőuúüű]')==1,compound) # lol
+
+w |> 
+  filter(!is.na(compound)) |> 
+  mutate(
+    c = str_extract(coda, '^.')
+  ) |> 
+  ggplot(aes(c,lv_log_odds,colour = compound)) +
+  geom_boxplot()
 
 w |> 
   filter(!compound) |> 
