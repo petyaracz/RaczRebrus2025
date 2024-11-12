@@ -38,13 +38,19 @@ geminatakat ne (hiszen ott lv nelkul degeminacio van, brossot, brost) [check]
 Shra nem vegzodik magyar szo [check]
 hany lemma van, arra is erdemes szurni talan? vagy tokenra
 
+
+====
+
+
 uj elmelet: mi a szofelismerhetoseg? ez hogyan josolja a kotohangzossagot?
+	nlrj
 	hany szotagos
-	milyen gyakori a toldalekolt alak
+	osszetett szo? elso vs msodik tag gyakorisag
+	milyen gyakori a toldalekolt alak 
 	milyen gyakori a to
 	milyen gyakori a minden
 	hany szomszedja van
-	burstiness
+	burstiness???
 	NDL looooool
-		vagy: szovegi klaszter jellege (SZONORITAS)
-	osszetett-e a szo??
+		vagy: szovegi klaszter jellege (SZONORITAS) -> ez benne van mar a coda szerkezeteben.
+	
