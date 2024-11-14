@@ -50,16 +50,35 @@ keep2 =
     '[/N][Pl.Poss.3Pl][Acc]'
   )
 
-c2 = c |> 
+c2 = c |>
   filter(xpostag %in% keep1)
 
-c3 = c2 |> 
+c3 = c2 |>
   filter(
     future_map_lgl(
-      lemma, 
+      lemma,
       ~ hunspell::hunspell_check(.x, dict = hunspell::dictionary('hu_HU')),
       .options = furrr_options(seed = TRUE))
                    )
 
 write_tsv(c3, 'past_acc_hun_webcorpus2_hunspell.gz')
+
+
+c4 = c |> 
+  filter(xpostag == '[/N][Nom]')
+
+lower = quantile(c$freq, .5)
+
+c4 = c4 |> 
+  filter(freq > lower)
+
+c5 = c4 |> 
+  filter(
+    future_map_lgl(
+      lemma, 
+      ~ hunspell::hunspell_check(.x, dict = hunspell::dictionary('hu_HU')),
+      .options = furrr_options(seed = TRUE))
+  )
+
+write_tsv(c5, 'noun_webcorpus2_hunspell.gz')
 

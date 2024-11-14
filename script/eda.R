@@ -3,84 +3,71 @@
 setwd('~/Github/RaczRebrus2025/')
 library(tidyverse)
 library(ggthemes)
+library(ggrain)
+library(performance)
+library(broom)
+library(sjPlot)
 
 # -- read -- #
 
 l = read_tsv('dat/long.tsv')
 w = read_tsv('dat/wide.tsv')
 
+# -- add info -- #
+
+w = w |> 
+  mutate(
+    penultimate_c = str_extract(coda, '^.'),
+    voiced_final_c = str_detect(coda, '[zž]$'),
+    log_freq = log(lv_freq + nlv_freq)
+  )
+
 # -- viz -- #
 
 w |> 
-  filter(!compound) |> 
-  mutate(
-    lemma = fct_reorder(lemma, lv_log_odds),
-    varies = lv_freq > 0 & nlv_freq > 0
-    ) |> 
-  ggplot(aes(lv_log_odds,lemma,colour = varies)) +
+  mutate(nsyl = factor(nsyl, levels = c('6','5','4','3','2','1'))) |> 
+  ggplot(aes(as.factor(nsyl),lv_log_odds)) +
+  geom_rain() +
+  coord_flip() +
+  theme_bw()
+
+w |> 
+  ggplot(aes(neighbourhood_size,lv_log_odds)) +
   geom_point() +
-  theme_few()
+  geom_smooth() +
+  theme_bw()
 
 w |> 
-  filter(!compound) |> 
-  mutate(c = str_extract(coda, '^.')) |> 
-  ggplot(aes(c,lv_log_odds)) +
-  geom_boxplot()
+  ggplot(aes(coda,lv_log_odds)) +
+  geom_rain() +
+  coord_flip() +
+  theme_bw()
 
 w |> 
-  filter(!compound) |> 
-  mutate(count = str_count(lemma, '[aáeéiíoóöőuúüű]')) |> 
-  ggplot(aes(as.character(count),lv_log_odds)) +
-  geom_boxplot()
-
-
-w |> 
-  filter(!is.na(compound)) |> 
-  mutate(
-    count = str_count(lemma, '[aáeéiíoóöőuúüű]'),
-    compound = ifelse(count == 1, F, compound)
-         ) |> 
-  ggplot(aes(as.factor(count),lv_log_odds,colour = compound)) +
-  geom_boxplot()
-
+  ggplot(aes(penultimate_c,lv_log_odds)) +
+  geom_rain() +
+  coord_flip() +
+  theme_bw()
 
 w |> 
-  filter(!is.na(compound)) |> 
-  mutate(
-    c = str_extract(coda, '^.'),
-    count = str_count(lemma, '[aáeéiíoóöőuúüű]'),
-    compound = ifelse(count == 1, F, compound)
-  ) |> 
-  ggplot(aes(c,lv_log_odds,colour = compound)) +
-  geom_boxplot()
-# what if second part of compound has more than one syl???
+  ggplot(aes(voiced_final_c,lv_log_odds)) +
+  geom_rain() +
+  coord_flip() +
+  theme_bw()
 
-w |> filter(str_count(lemma, '[aáeéiíoóöőuúüű]')==1,compound) # lol
+# -- fun with glms -- #
 
-w |> 
-  filter(!is.na(compound)) |> 
-  mutate(
-    c = str_extract(coda, '^.')
-  ) |> 
-  ggplot(aes(c,lv_log_odds,colour = compound)) +
-  geom_boxplot()
+fit1 = glm(cbind(lv_freq,nlv_freq) ~ 1 + penultimate_c + voiced_final_c + log_freq + neighbourhood_size + nsyl, data = w, family = binomial)
 
-w |> 
-  filter(!compound) |> 
-  mutate(
-    c = str_extract(coda, '^.'),
-    c_is_n = c == 'n',
-    log_freq = log(lv_freq + nlv_freq)
-  ) |> 
-  ggplot(aes(log_freq,lv_log_odds,colour = c_is_n)) +
-  geom_point()
+check_model(fit1)
 
+fit2 = glm(cbind(lv_freq,nlv_freq) ~ 1 + voiced_final_c + log_freq + neighbourhood_size + nsyl, data = w, family = binomial)
 
-w |> 
-  filter(!compound) |> 
-  mutate(
-    count = str_count(lemma, '[aáeéiíoóöőuúüű]'),
-    voiced = str_detect(coda, '[zž]$')
-         ) |> 
-  ggplot(aes(as.character(count),lv_log_odds,fill = voiced)) +
-  geom_boxplot()
+fit3 = glm(cbind(lv_freq,nlv_freq) ~ 1 + voiced_final_c + log_freq + penultimate_c + nsyl, data = w, family = binomial)
+
+compare_performance(fit2,fit3, metrics = 'common')
+
+tidy(fit3, conf.int = T)
+check_collinearity(fit3)
+
+# ho hum

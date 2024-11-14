@@ -1,0 +1,15 @@
+lemma 	word lemma
+lv_word 	acc w/ linking vowel (if attested)
+lv_transcription 	transcribed to one character is one sound trans
+coda 	ending of lemma
+linking_vowel 	what is the linking vowel
+lv_freq 	freq of lv word
+lemma_freq 	freq of lemma
+neighbourhood_size n nouns w/ edit distance of 1 to lemma in median+ freq corpus
+nsyl 	length in syl 
+nlv_word 	acc w/o linking vowel (if attested)
+nlv_transcription 	transcribed ~
+nlv_freq 	freq of ~
+lv_odds 	(lv+1)/(nlv+1)
+lv_log_odds log((lv+1)/(nlv+1))
+varies 	lv_freq != 0 and nlv_freq != 0
