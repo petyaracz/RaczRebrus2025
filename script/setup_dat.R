@@ -31,30 +31,6 @@ countNeighbours = function(string,neighbour_forms){
   length(dists[dists==1])
 }
 
-# take dat, make pairs
-makePairs = function(dat){
-  
-  lv = dat |> 
-    filter(linking_vowel_present) |> 
-    select(lemma,form,form_transcription,coda,linking_vowel,freq,lemma_freq,neighbourhood_size,nsyl) |> 
-    rename(lv_word = form, lv_transcription = form_transcription, lv_freq = freq)
-  
-  nlv = dat |> 
-    filter(!linking_vowel_present) |> 
-    select(lemma,form,form_transcription,coda,linking_vowel,freq,lemma_freq,neighbourhood_size,nsyl) |> 
-    rename(nlv_word = form, nlv_transcription = form_transcription, nlv_freq = freq)
-  
-  pairs = full_join(lv,nlv) |> 
-    mutate(
-      lv_freq = ifelse(is.na(lv_freq),0,lv_freq),
-      nlv_freq = ifelse(is.na(nlv_freq),0,nlv_freq),
-      lv_odds = (lv_freq+1) / (nlv_freq+1),
-      lv_log_odds = log(lv_odds),
-      varies = lv_freq != 0 & nlv_freq != 0
-    )
-  
-}
-
 # -- read -- #
 
 c = read_tsv('dat/past_acc_hun_webcorpus2_hunspell.gz')
@@ -84,52 +60,44 @@ d = d |>
     coda2 = str_extract(coda, '[sšzž]$'),
     linking_vowel = str_extract(form_transcription, '[oeö](?=t$)'),
     linking_vowel_present = !is.na(linking_vowel),
-    nsyl = str_count(form, '[aáeéiíoóöőuúüű]')
+    nsyl = str_count(lemma, '[aáeéiíoóöőuúüű]')
   )
 
-# -- compounds -- #
+# -- compounds etc -- #
 
-# comparison_forms = r |> 
-#   filter(str_count(form, '[aáeéiíoóöőuúüű]') %in% 1:3) |> 
-#   pull(form)
 comparison_forms = d |> 
   filter(nsyl < 4) |> 
   pull(lemma) |> 
   unique()
 
-d2 = d |> 
+compounds = d |> 
   rowwise() |> 
-  mutate(
-    compound = findMatch(lemma,comparison_forms)
-  ) |> 
-  ungroup()
+  filter(findMatch(lemma,comparison_forms)) |> 
+  ungroup() |> 
+  pull(lemma) |> 
+  unique() |> 
+  sort()
 
-# -- tidying up -- #
+# not compounds
+compounds = compounds[!compounds %in% c('rajz','mars')]
 
-# not noun
-not_noun = c('gyermekkelpénz','különbözőantioxidáns','örülsz','kérsz','bírsz','vélsz','akarsz','ajz','ars','beszelsz','érsz','fájsz','fejelsz','fejsz','gyors','írsz','kélsz','manipulálsz','mersz','marsz','nyers','ócsárolsz','szarsz','remélsz','találsz','újjáélsz','ülsz','válsz','vélsz','vonsz','körbejársz')
+# not nouns
+not_nouns = c('gyermekkelpénz','különbözőantioxidáns','örülsz','kérsz','bírsz','vélsz','akarsz','ajz','ars','beszelsz','érsz','fájsz','fejelsz','fejsz','gyors','írsz','kélsz','manipulálsz','mersz','marsz','nyers','ócsárolsz','szarsz','remélsz','találsz','újjáélsz','ülsz','válsz','vélsz','vonsz','körbejársz','akarsz','ajz','ars','beszelsz','érsz','fejelsz','használsz','írsz','kélsz','körbejársz','marsz','nyersz','ócsárolsz','remélsz','szarsz','találsz','újjáélsz','válsz','vélsz','vonz','vonsz')
 
-# not compound
-not_compound = c('rajz','mars')
+# also compounds
+also_compounds = '.(szimpatizáns|determináns|antioxidáns|szimpatizáns|reprezentáns|prominens|koefficiens|koncipiens)$'
 
-# compound
-compound = c('kommunistaszimpatizáns','mellékdetermináns','paradicsomantioxidáns',
-'kormányszimpatizáns','pártszimpatizáns','rezisztenciadetermináns','sajtóreprezentáns','sarokdetermináns','tárgyreprezentáns','főprominens')
+# wrong forms
+wrong_forms = c('torzset','versot','törzsöt','versöt','kontinensvet','spejzot','pénzöt','traverzot','borsöt','torzsot','sorsvet','falset','borset')
 
-d2 = d2 |> 
-  filter(!lemma %in% not_noun) |> 
-  mutate(
-    compound = case_when(
-      lemma %in% not_compound ~ F,
-      lemma %in% compound ~ T,
-      T ~ compound # ...
-    )
-  ) |> 
+d2 = d |> 
   filter(
-    !compound,
-    !str_detect(lemma, '.(determináns|szimpatizáns|reprezentáns|koefficiens|antioxidáns|koncipiens)') # also compounds
-         )
-
+    !lemma %in% compounds,
+    !lemma %in% not_nouns,
+    str_detect(lemma, also_compounds, negate = T),
+    !form %in% wrong_forms
+  )
+  
 # -- neighbours -- #
 
 range(nchar(d2$lemma_transcription))
@@ -152,28 +120,40 @@ d3 = d2 |>
 
 # -- pairs -- #
 
-# make pairs
-pairs1 = makePairs(d3)
+word_metadata = d3 |> 
+  distinct(lemma,lemma_transcription,coda,coda1,coda2,lemma_freq,llfpm10,neighbourhood_size,nsyl,corpus_size)
 
-# check pairs
-sus = pairs1 |> 
-  count(lemma) |> 
-  filter(n > 1) |> 
-  pull(lemma)
+lv = d3 |> 
+  filter(linking_vowel_present) |> 
+  select(lemma,form,form_transcription,freq,lfpm10) |> 
+  rename(lv_word = form, lv_transcription = form_transcription, lv_freq = freq, lv_lfpm10 = lfpm10)
 
-pairs1 |> 
-  filter(lemma %in% sus) |> 
-  pull(lv_word)
+nlv = d3 |> 
+  filter(!linking_vowel_present) |> 
+  select(lemma,form,form_transcription,freq,lfpm10) |> 
+  rename(nlv_word = form, nlv_transcription = form_transcription, nlv_freq = freq, nlv_lfpm10 = lfpm10)
 
-drop_lv = c('torzset','versot','törzsöt','versöt','kontinensvet','spejzot','pénzöt','traverzot','borsöt','torzsot','sorsvet','falset','borset')
+pairs = word_metadata |> 
+  left_join(lv) |> 
+  left_join(nlv)
+  
+# -- final touches -- #
 
-pairs1 = pairs1 |> 
-  filter(!lv_word %in% drop_lv)
-d3 = d3 |> 
-  filter(!form %in% drop_lv)
+pairs2 = pairs |> 
+  mutate(
+    lv_freq = ifelse(is.na(lv_freq),0,lv_freq),
+    nlv_freq = ifelse(is.na(nlv_freq),0,nlv_freq),
+    lv_odds = (lv_freq+1) / (nlv_freq+1),
+    lv_log_odds = log(lv_odds),
+    varies = lv_freq != 0 & nlv_freq != 0,
+    voiced_final_c = str_detect(coda, '[zž]$')
+  )
 
 # -- write -- #
 
 write_tsv(d3, 'dat/long.tsv')
-write_tsv(pairs1, 'dat/wide.tsv')
-googlesheets4::write_sheet(pairs1, 'https://docs.google.com/spreadsheets/d/1EMN_Iwo6ffSRQJ7Tg_iRhw0woSTFkAtLIWmQOYm3SZ8/edit?usp=sharing', 'forms')
+write_tsv(pairs2, 'dat/wide.tsv')
+googlesheets4::write_sheet(pairs2, 'https://docs.google.com/spreadsheets/d/1EMN_Iwo6ffSRQJ7Tg_iRhw0woSTFkAtLIWmQOYm3SZ8/edit?usp=sharing', 'forms')
+pairs2 |> 
+  names() |> 
+  write_lines('dat/dict.txt')
