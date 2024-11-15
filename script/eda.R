@@ -31,7 +31,7 @@ l = l |>
 w |> 
   mutate(nsyl = fct_rev(nsyl)) |> 
   ggplot(aes(nsyl,lv_log_odds)) +
-  geom_tufteboxplot() +
+  geom_tufteboxplot(median.type = "line", hoffset = 0, width = 3) +
   coord_flip() +
   theme_few() +
   xlab('n syllables') +
@@ -42,7 +42,7 @@ ggsave('fig/nsyl_lv.png', width = 6, height = 2)
 w |> 
   mutate(neighbourhood_size = fct_rev(neighbourhood_size)) |> 
   ggplot(aes(neighbourhood_size,lv_log_odds)) +
-  geom_tufteboxplot() +
+  geom_tufteboxplot(median.type = "line", hoffset = 0, width = 3) +
   coord_flip() +
   theme_few() +
   xlab('n neighbours') +
@@ -53,7 +53,7 @@ ggsave('fig/nsize_lv.png', width = 6, height = 3)
 w |> 
   mutate(coda1 = fct_relevel(coda1, 'r','j','l','n')) |> 
   ggplot(aes(coda1,lv_log_odds)) +
-  geom_tufteboxplot() +
+  geom_tufteboxplot(median.type = "line", hoffset = 0, width = 3) +
   coord_flip() +
   theme_few() +
   xlab('_C#+(V)t') +
@@ -64,7 +64,7 @@ ggsave('fig/c1_lv.png', width = 6, height = 2)
 w |> 
   mutate(coda2 = fct_relevel(coda2, 'š','z','s','ž')) |>
   ggplot(aes(coda2,lv_log_odds)) +
-  geom_tufteboxplot() +
+  geom_tufteboxplot(median.type = "line", hoffset = 0, width = 3) +
   coord_flip() +
   theme_few() +
   xlab('C_#+(V)t') +

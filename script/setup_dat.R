@@ -88,7 +88,7 @@ not_nouns = c('gyermekkelpénz','különbözőantioxidáns','örülsz','kérsz',
 also_compounds = '.(szimpatizáns|determináns|antioxidáns|szimpatizáns|reprezentáns|prominens|koefficiens|koncipiens)$'
 
 # wrong forms
-wrong_forms = c('torzset','versot','törzsöt','versöt','kontinensvet','spejzot','pénzöt','traverzot','borsöt','torzsot','sorsvet','falset','borset')
+wrong_forms = c('torzset','versot','törzsöt','versöt','kontinensvet','spejzot','pénzöt','traverzot','borsöt','torzsot','sorsvet','falset','borset','falszot','nyársot')
 
 d2 = d |> 
   filter(
@@ -154,6 +154,6 @@ pairs2 = pairs |>
 write_tsv(d3, 'dat/long.tsv')
 write_tsv(pairs2, 'dat/wide.tsv')
 googlesheets4::write_sheet(pairs2, 'https://docs.google.com/spreadsheets/d/1EMN_Iwo6ffSRQJ7Tg_iRhw0woSTFkAtLIWmQOYm3SZ8/edit?usp=sharing', 'forms')
-pairs2 |> 
-  names() |> 
-  write_lines('dat/dict.txt')
+# pairs2 |> 
+  # names() |> 
+  # write_lines('dat/dict.txt')
