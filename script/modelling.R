@@ -5,8 +5,9 @@ library(tidyverse)
 library(performance)
 library(broom)
 library(sjPlot)
-library(knitr)
+library(randomForest)
 library(mgcv)
+library(knitr)
 
 # -- read -- #
 
@@ -15,37 +16,36 @@ w = read_tsv('dat/wide.tsv')
 # -- correlations -- #
 
 w |> 
-  select(coda1,coda2,neighbourhood_size,nsyl,llfpm10,lv_log_odds) |> 
+  select(coda1,coda2,neighbourhood_size,llfpm10,nsyl,lv_log_odds) |> 
   psych::pairs.panels(smooth = T, density = T, method = 'spearman')
 
-# -- model fitting -- #
+w2 = w |> 
+  select(coda1,coda2,neighbourhood_size,llfpm10,nsyl,lv_log_odds)
 
-w$coda_nS = w$coda == 'nš'
+# -- rf -- #
+
+rf1 = randomForest(lv_log_odds ~ ., data = w2, mtry = 3, ntree = 1000)
+rf1
+importance(rf1)
+
+# -- gam -- #
+
+## fit 
 
 fit1 = gam(cbind(lv_freq,nlv_freq) ~ coda1 + coda2, data = w, family = binomial)
-fit1a = gam(cbind(lv_freq,nlv_freq) ~ coda1, data = w, family = binomial)
-fit1alt = gam(cbind(lv_freq,nlv_freq) ~ coda_nS, data = w, family = binomial)
 fit2 = gam(cbind(lv_freq,nlv_freq) ~ s(neighbourhood_size, k = 3) + s(nsyl, k = 3), data = w, family = binomial)
-vif(fit1)
-vif(fit2)
+check_collinearity(fit2)
+plot(fit2)
 
-check_model(fit1, residual_type = 'normal')
-check_model(fit2, residual_type = 'normal')
+## test
 
-# -- eval -- #
-
-# metrics
+check_model(fit1)
+check_model(fit2)
 plot(compare_performance(fit1,fit2))
-compare_performance(fit1,fit2)
-anova(fit1,fit1a)
-r2_kullback(fit1)
-r2_kullback(fit1a)
-r2_kullback(fit1alt)
-r2_kullback(fit2)
+test_performance(fit1,fit2)
 
-# tests
-test_vuong(fit1,fit2)
-anova(fit1,fit2)
+r2_kullback(fit1)
+r2_kullback(fit2)
 
 # -- residualisation -- #
 
@@ -74,24 +74,22 @@ v = filter(w, varies)
 fit1c = gam(cbind(lv_freq,nlv_freq) ~ coda1 + coda2, data = v, family = binomial)
 fit2c = gam(cbind(lv_freq,nlv_freq) ~ s(neighbourhood_size, k = 3) + s(nsyl, k = 3), data = v, family = binomial)
 
-check_collinearity(fit2c)
 plot(compare_performance(fit1c,fit2c))
-test_vuong(fit1c,fit2c)
-anova(fit1c,fit2c)
+test_performance(fit1c,fit2c)
 
 # -- viz -- #
 
-plot_model(fit1, 'pred', terms = 'coda1')
-plot_model(fit1, 'pred', terms = 'coda2')
-plot_model(fit1c, 'pred', terms = 'coda1')
-plot_model(fit1c, 'pred', terms = 'coda2')
-plot_model(fit2, 'pred', terms = 'neighbourhood_size')
-plot_model(fit2, 'pred', terms = 'nsyl')
-plot_model(fit2c, 'pred', terms = 'neighbourhood_size')
-plot_model(fit2c, 'pred', terms = 'nsyl')
+plot_model(fit1, 'pred', terms = 'coda1') + theme_few()
+plot_model(fit1, 'pred', terms = 'coda2') + theme_few()
+plot_model(fit1c, 'pred', terms = 'coda1') + theme_few()
+plot_model(fit1c, 'pred', terms = 'coda2') + theme_few()
+plot_model(fit2, 'pred', terms = 'neighbourhood_size') + theme_few()
+plot_model(fit2, 'pred', terms = 'nsyl') + theme_few()
+plot_model(fit2c, 'pred', terms = 'neighbourhood_size') + theme_few()
+plot_model(fit2c, 'pred', terms = 'nsyl') + theme_few()
 
 # -- sum -- #
 
-# recursive feature elimination with checks for collinearity results in phonology model (final consonants of stem) and lexicon model (neighbourhood size and stem length)
 #  phonology model fits better than lexicon model
 # lexicon model does some work not explained by phon model, phon model does some work not explained by lexicon model
+# diachronic explanation?
