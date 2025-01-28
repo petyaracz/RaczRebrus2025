@@ -4,6 +4,7 @@ setwd('~/Github/RaczRebrus2025/')
 library(tidyverse)
 library(performance)
 library(broom)
+library(ggthemes)
 library(sjPlot)
 library(randomForest)
 library(mgcv)
@@ -16,8 +17,22 @@ w = read_tsv('dat/wide.tsv')
 # -- correlations -- #
 
 w |> 
-  select(coda1,coda2,neighbourhood_size,llfpm10,nsyl,lv_log_odds) |> 
+  rename(
+    `szóvégi első\nmássalhangzó` = coda1,
+    `szóvégi második\nmássalhangzó` = coda2,
+    `szomszédok\nszáma` = neighbourhood_size,
+    `log gyakoriság` = llfpm10,
+    `szótagszám` = nsyl
+  ) |> 
+  select(
+    `szóvégi első\nmássalhangzó`,
+    `szóvégi második\nmássalhangzó`,
+    `szomszédok\nszáma`,
+    `log gyakoriság`,
+    `szótagszám`
+  ) |> 
   psych::pairs.panels(smooth = T, density = T, method = 'spearman')
+
 
 w2 = w |> 
   select(coda1,coda2,neighbourhood_size,llfpm10,nsyl,lv_log_odds)
@@ -27,13 +42,30 @@ w2 = w |>
 rf1 = randomForest(lv_log_odds ~ ., data = w2, mtry = 3, ntree = 1000)
 rf1
 importance(rf1)
+purities = pull(tibble(importance(rf1))[,1])
+
+tibble(
+  változó = c(
+    "szóvégi első\nmássalhangzó",
+    "szóvégi második\nmássalhangzó",
+    "szomszédok\nszáma",
+    "log gyakoriság",
+    "szótagszám"
+  ),
+  `csomópont tisztaság növekedése` = as.double(purities)
+) |> 
+  mutate(változó = fct_reorder(változó, -`csomópont tisztaság növekedése`)) |> 
+  ggplot(aes(y = változó, x = `csomópont tisztaság növekedése`)) +
+  geom_col() +
+  theme_few()
+ggsave('fig/rf.png', width = 4, height = 2.5, dpi = 300)
 
 # -- gam -- #
 
 ## fit 
 
 fit1 = gam(cbind(lv_freq,nlv_freq) ~ coda1 + coda2, data = w, family = binomial)
-fit2 = gam(cbind(lv_freq,nlv_freq) ~ s(neighbourhood_size, k = 3) + s(nsyl, k = 3), data = w, family = binomial)
+fit2 = gam(cbind(lv_freq,nlv_freq) ~ s(neighbourhood_size, k = 3) + s(nsyl, k = 3) + s(llfpm10), data = w, family = binomial)
 check_collinearity(fit2)
 plot(fit2)
 
@@ -41,8 +73,15 @@ plot(fit2)
 
 check_model(fit1)
 check_model(fit2)
-plot(compare_performance(fit1,fit2))
-test_performance(fit1,fit2)
+plot(compare_performance(fit1,fit2)) +
+  ggtitle('') +
+  labs(colour = 'additív modell') +
+  scale_colour_colorblind(labels = c('hangtani','lexikai')) +
+  scale_fill_colorblind()
+
+ggsave('fig/gamcomp.png', width = 6, height = 3, dpi = 300)
+
+test_likelihoodratio(fit1,fit2)
 
 r2_kullback(fit1)
 r2_kullback(fit2)
