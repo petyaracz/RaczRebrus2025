@@ -22,7 +22,8 @@ w = w |>
   mutate(
     neighbourhood_size = factor(neighbourhood_size, ordered = T),
     nsyl = factor(nsyl, ordered = T),
-    lfpm10 = lv_lfpm10 + nlv_lfpm10
+    lfpm10 = lv_lfpm10 + nlv_lfpm10,
+    koda2 = str_replace_all(coda2, c('s' = 'sz', 'š' = 's', 'ž' = 'zs'))
   )
 
 l = l |> 
@@ -80,8 +81,8 @@ p3 = w |>
   theme(axis.ticks = element_blank())
 
 p4 = w |> 
-  mutate(coda2 = fct_relevel(coda2, 's','z','sz','z')) |>
-  ggplot(aes(coda2,lv_log_odds)) +
+  mutate(koda2 = fct_relevel(koda2, 's','z','sz','zs')) |>
+  ggplot(aes(koda2,lv_log_odds)) +
   geom_tufteboxplot(median.type = "line", hoffset = 0, width = 3) +
   coord_flip() +
   theme_few() +
@@ -98,21 +99,21 @@ p5 = w |>
   theme(axis.ticks = element_blank())
 
 w |> 
-  select(lemma,neighbourhood_size,nsyl,coda) |> 
   mutate(
+    koda = str_replace_all(coda, c('s' = 'sz', 'š' = 's', 'ž' = 'zs')),
     `hangtani szomszédok` = as.double(neighbourhood_size),
     `szótagok` = as.double(nsyl)
   ) |> 
-  select(-neighbourhood_size,-nsyl) |> 
-  pivot_longer(-c(lemma,coda)) |> 
-  ggplot(aes(value,coda)) +
+  select(lemma,`hangtani szomszédok`,`szótagok`,koda) |> 
+  pivot_longer(-c(lemma,koda)) |> 
+  ggplot(aes(value,koda)) +
   geom_count() +
   facet_wrap( ~ name) +
   theme_few() +
   ylab('tővégi mássalhangzócsoport') +
   xlab('mennyiség')
 
-ggsave('fig/bigfigure2.png', dpi = 300, width = 5, height = 5)
+ggsave('fig/bigfigure2.png', dpi = 600, width = 5, height = 5)
 
 (p3 + p4 + plot_spacer()) / (p1 + p2 + p5) + plot_annotation(tag_levels = 'a')
 ggsave('fig/bigfigure1.png', dpi = 600, width = 9, height = 6)

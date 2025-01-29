@@ -17,16 +17,18 @@ w = read_tsv('dat/wide.tsv')
 # -- correlations -- #
 
 w |> 
+  mutate(
+    `első "n"` = coda1 == 'n',
+    `második "s"` = coda2 == 'š',
+    ) |> 
   rename(
-    `szóvégi első\nmássalhangzó` = coda1,
-    `szóvégi második\nmássalhangzó` = coda2,
     `szomszédok\nszáma` = neighbourhood_size,
     `log gyakoriság` = llfpm10,
     `szótagszám` = nsyl
   ) |> 
   select(
-    `szóvégi első\nmássalhangzó`,
-    `szóvégi második\nmássalhangzó`,
+    `első "n"`,
+    `második "s"`,
     `szomszédok\nszáma`,
     `log gyakoriság`,
     `szótagszám`
@@ -35,19 +37,35 @@ w |>
 
 
 w2 = w |> 
-  select(coda1,coda2,neighbourhood_size,llfpm10,nsyl,lv_log_odds)
+  mutate(
+    coda1n = coda1 == 'n',
+    coda1r = coda1 == 'r',
+    coda1j = coda1 == 'j',
+    coda1l = coda1 == 'l',
+    coda2z = coda2 == 'z',
+    coda2š = coda2 == 'š',
+    coda2s = coda2 == 's',
+    coda2ž = coda2 == 'ž'
+  ) |> 
+  select(matches('coda[12].'),neighbourhood_size,llfpm10,nsyl,lv_log_odds)
 
 # -- rf -- #
 
-rf1 = randomForest(lv_log_odds ~ ., data = w2, mtry = 3, ntree = 1000)
+rf1 = randomForest(lv_log_odds ~ ., data = w2, mtry = 6, ntree = 1500)
 rf1
 importance(rf1)
 purities = pull(tibble(importance(rf1))[,1])
 
 tibble(
   változó = c(
-    "szóvégi első\nmássalhangzó",
-    "szóvégi második\nmássalhangzó",
+    "szóvégi első\nmássalhangzó: n",
+    "szóvégi első\nmássalhangzó: r",
+    "szóvégi első\nmássalhangzó: j",
+    "szóvégi első\nmássalhangzó: l",
+    "szóvégi második\nmássalhangzó: z",
+    "szóvégi második\nmássalhangzó: s",
+    "szóvégi második\nmássalhangzó: sz",
+    "szóvégi második\nmássalhangzó: zs",
     "szomszédok\nszáma",
     "log gyakoriság",
     "szótagszám"
@@ -58,7 +76,7 @@ tibble(
   ggplot(aes(y = változó, x = `csomópont tisztaság növekedése`)) +
   geom_col() +
   theme_few()
-ggsave('fig/rf.png', width = 4, height = 2.5, dpi = 300)
+ggsave('fig/rf.png', width = 4, height = 5, dpi = 600)
 
 # -- gam -- #
 
@@ -79,7 +97,7 @@ plot(compare_performance(fit1,fit2)) +
   scale_colour_colorblind(labels = c('hangtani','lexikai')) +
   scale_fill_colorblind()
 
-ggsave('fig/gamcomp.png', width = 6, height = 3, dpi = 300)
+ggsave('fig/gamcomp.png', width = 6, height = 3, dpi = 600)
 
 test_likelihoodratio(fit1,fit2)
 
