@@ -49,12 +49,20 @@ w2 = w |>
   ) |> 
   select(matches('coda[12].'),neighbourhood_size,llfpm10,nsyl,lv_log_odds)
 
+w3 = w2 |> 
+  filter(coda1n,coda2š) |> 
+  select(neighbourhood_size,llfpm10,nsyl,lv_log_odds)
+
 # -- rf -- #
 
 rf1 = randomForest(lv_log_odds ~ ., data = w2, mtry = 6, ntree = 1500)
 rf1
 importance(rf1)
 purities = pull(tibble(importance(rf1))[,1])
+
+rf2 = randomForest(lv_log_odds ~ ., data = w3, mtry = 2, ntree = 1500)
+rf2
+importance(rf2)
 
 tibble(
   változó = c(
