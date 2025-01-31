@@ -17,12 +17,14 @@ w = read_tsv('dat/wide.tsv')
 # -- filt -- #
 
 w = w |> 
-  filter(varies)
+  filter(varies) |> 
+  mutate(ending_ns = coda1 == 'n' & coda2 == 'š')
 
 # -- correlations -- #
 
 w_num = w |> 
   mutate(
+    `-ns` = coda1 == 'n' & coda2 == 'š',
     `első "n"` = coda1 == 'n',
     `második "s"` = coda2 == 'š',
     ) |> 
@@ -32,6 +34,7 @@ w_num = w |>
     `szótagszám` = nsyl
   ) |> 
   select(
+    `-ns`,
     `első "n"`,
     `második "s"`,
     `szomszédok\nszáma`,
@@ -65,24 +68,42 @@ w2 = w |>
     coda2s = coda2 == 's',
     coda2ž = coda2 == 'ž'
   ) |> 
-  select(matches('coda[12].'),neighbourhood_size,llfpm10,nsyl,lv_log_odds)
-
-w3 = w2 |> 
-  filter(coda1n,coda2š) |> 
-  select(neighbourhood_size,llfpm10,nsyl,lv_log_odds)
+  select(matches('coda[12].'),ending_ns,neighbourhood_size,llfpm10,nsyl,lv_log_odds)
 
 # -- rf -- #
 
-rf1 = randomForest(lv_log_odds ~ ., data = w2, mtry = 4, ntree = 2500)
-rf1
+getPearson = function(my_preds){
+  tidy(cor.test(my_preds,w$lv_log_odds, method = 'pearson'))
+}
 
-rf2 = randomForest(lv_log_odds ~ ., data = w3, mtry = 1, ntree = 2500)
-rf2
+rf_hyperparameters = 
+  crossing(
+    mtry = 1:8,
+    ntree = c(seq(50,5000,50))
+  )
 
-importance(rf2)
-importance(rf1)
-purities = pull(tibble(importance(rf1))[,1])
-purities2 = pull(tibble(importance(rf2))[,1])
+rf_fits = rf_hyperparameters |> 
+  mutate(
+    rf = pmap(list(mtry, ntree), ~ randomForest(lv_log_odds ~ ., data = w2)),
+    pred = map(rf, ~ predict(.))
+  ) 
+
+best_parameters = rf_fits |> 
+  mutate(
+    pearson = map(pred, getPearson)
+  ) |> 
+  select(mtry,ntree,pearson) |> 
+  unnest(pearson) |> 
+  arrange(-estimate) |> 
+  slice(1) |> 
+  select(mtry,ntree)
+
+best_rf = randomForest(lv_log_odds ~ ., data = w2, mtry = best_parameters$mtry, ntree = best_parameters$ntree)
+
+# -- viz -- #
+
+importance(best_rf)
+purities = pull(tibble(importance(best_rf))[,1])
 
 tibble(
   változó = c(
@@ -94,6 +115,7 @@ tibble(
     "szóvégi második\nmássalhangzó: s",
     "szóvégi második\nmássalhangzó: sz",
     "szóvégi második\nmássalhangzó: zs",
+    "-ns végű tő",
     "szomszédok\nszáma",
     "log gyakoriság",
     "szótagszám"
@@ -104,19 +126,5 @@ tibble(
   ggplot(aes(y = változó, x = `csomópont tisztaság növekedése`)) +
   geom_col() +
   theme_few()
-ggsave('fig/rf1.png', width = 4, height = 5, dpi = 600)
 
-tibble(
-  változó = c(
-    "szomszédok\nszáma",
-    "log gyakoriság",
-    "szótagszám"
-  ),
-  `csomópont tisztaság növekedése` = as.double(purities2)
-) |> 
-  mutate(változó = fct_reorder(változó, -`csomópont tisztaság növekedése`)) |> 
-  ggplot(aes(y = változó, x = `csomópont tisztaság növekedése`)) +
-  geom_col() +
-  theme_few() +
-  xlim(0,200)
-ggsave('fig/rf2.png', width = 4, height = 1.5, dpi = 600)
+ggsave('fig/rf.png', width = 4, height = 5, dpi = 600)

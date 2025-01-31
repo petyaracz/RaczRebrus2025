@@ -21,6 +21,8 @@ uesz_df = read_tsv('dat/uesz_ns.tsv')
 w = w |> 
   filter(varies) |> 
   mutate(
+    ending_ns = coda1 == 'n' & coda2 == 'š',
+    ending_ns = ifelse(lemma == 'siemens', F, ending_ns),
     neighbourhood_size = factor(neighbourhood_size, ordered = T),
     nsyl = factor(nsyl, ordered = T),
     lfpm10 = lv_lfpm10 + nlv_lfpm10,
@@ -28,59 +30,70 @@ w = w |>
     ns = coda1 == 'n', coda2 == 'š'
   )
 
-w_num = w |> 
-  mutate(
-    `első "n"` = coda1 == 'n',
-    `második "s"` = coda2 == 'š',
-  ) |> 
-  rename(
-    `szomszédok\nszáma` = neighbourhood_size,
-    `log gyakoriság` = llfpm10,
-    `szótagszám` = nsyl
-  ) |> 
-  select(
-    `első "n"`,
-    `második "s"`,
-    `szomszédok\nszáma`,
-    `log gyakoriság`,
-    `szótagszám`
-  ) |> 
-  mutate(across(where(is.logical), as.numeric)) |> 
-  scale()
+# -- viz -- #
 
-# -- counts -- #
+p1 = w |> 
+  mutate(lemma = fct_reorder(lemma,lv_log_odds)) |> 
+  ggplot(aes(lv_log_odds,lemma, colour = ending_ns)) +
+  geom_point() +
+  scale_colour_colorblind(labels = c('egyéb','-ns (docens, variáns)'), name = 'tő végződés') +
+  theme_bw() +
+  scale_x_continuous(sec.axis = sec_axis(trans = ~ plogis(.), name = 'p(klienset)', breaks = c(.01,.1,.5,.9,.99)), name = 'log (klienset / klienst)') +
+  theme(legend.position = 'bottom',axis.title.y = element_blank())
 
-# select(lemma,lv_log_odds,coda,nsyl,llfpm10bins,neighbourhood_size)
-w |> 
-  count(coda) |> 
-  mutate(coda = fct_reorder(coda,n)) |> 
-  ggplot(aes(n,coda)) +
-  geom_col() +
-  theme_few() +
-  xlab('váltakozó tövek száma') +
-  ylab('tővégi mássalhangzócsoport')
-  
-# -- log odds -- #
-
-w |> 
-  mutate(
-    coda2 = ifelse(coda == 'nš', coda, 'egyéb')
-  ) |> 
-  ggplot(aes(coda2,lv_log_odds)) +
+p2 = w |> 
+  ggplot(aes(ending_ns,lv_log_odds)) +
   geom_rain() +
+  theme_bw() +
   coord_flip() +
-  ylab('log (klienset / klienst)') +
-  xlab('tővégi mássalhangzócsoport')
+  scale_x_discrete(labels = c('egyéb','-ns (docens, variáns)'), name = 'tő végződés') +
+  scale_y_continuous(sec.axis = sec_axis(trans = ~ plogis(.), name = 'p(klienset)', breaks = c(.01,.1,.5,.9,.99)), name = 'log (klienset / klienst)')
 
-# -- correlations -- #
+p3 = w |> 
+  mutate(
+    nsize2 = case_when(
+      neighbourhood_size == 0 ~ "0",
+      neighbourhood_size == 1 ~ "1",
+      neighbourhood_size %in% 2:5 ~ "2-5",
+      neighbourhood_size > 5 ~ "6+",
+    ) |> 
+      fct_relevel('6+','2-5','1','0')
+  ) |> 
+  ggplot(aes(nsize2,lv_log_odds)) +
+  geom_rain() +
+  theme_bw() +
+  coord_flip() +
+  xlab('hangtani szomszédok száma') +
+  scale_y_continuous(sec.axis = sec_axis(trans = ~ plogis(.), name = 'p(klienset)', breaks = c(.01,.1,.5,.9,.99)), name = 'log (klienset / klienst)')
 
-w_pca <- prcomp(w_num, center = TRUE, scale. = TRUE)
+p4 = w |> 
+  mutate(
+    nsyl2 = case_when(
+      nsyl == 1 ~ "1",
+      nsyl == 2 ~ "2",
+      nsyl > 2 ~ "3+",
+    ) |> 
+      fct_relevel('3+','2','1')
+  ) |> 
+  ggplot(aes(nsyl2,lv_log_odds)) +
+  geom_rain() +
+  theme_bw() +
+  coord_flip() +
+  xlab('tő szótagszáma') +
+  scale_y_continuous(sec.axis = sec_axis(trans = ~ plogis(.), name = 'p(klienset)', breaks = c(.01,.1,.5,.9,.99)), name = 'log (klienset / klienst)')
 
-# View summary of PCA results
-summary(w_pca)
+p5 = w |> 
+  ggplot(aes(lv_log_odds,llfpm10)) +
+  geom_point() +
+  geom_smooth() +
+  theme_bw() +
+  scale_x_continuous(sec.axis = sec_axis(trans = ~ plogis(.), name = 'p(klienset)', breaks = c(.01,.1,.5,.9,.99)), name = 'log (klienset / klienst)') +
+  scale_y_continuous(sec.axis = sec_axis(trans = ~ exp(.), name = 'tő gyakoriság / 10^6 szó', breaks = c(1,2,5,10,20,30)), name = 'log (tő gyakoriság / 10^6 szó)')
 
-factoextra::fviz_pca_var(w_pca) +
-  theme_minimal() +
-  ggtitle('')
+# -- print -- #
 
-ggsave('fig/pca.png', dpi = 600, width = 5, height = 5)
+p1
+ggsave('fig/distro.png', dpi = 600, height = 9, width = 5)
+
+(p2 + p3) / (p4 + p5)
+ggsave('fig/relationships.png', dpi = 600, height = 6, width = 10)
