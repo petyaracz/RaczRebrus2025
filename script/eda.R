@@ -168,8 +168,8 @@ ggsave('fig/rf.png', dpi = 600, height = 3, width = 3)
 p1
 ggsave('fig/distro.png', dpi = 600, height = 9, width = 3.5)
 
-p2 / p3 / p4 / p5 + plot_annotation(tag_levels = 'i')
-ggsave('fig/relationships.png', dpi = 1200, height = 8, width = 4)
+p2 / p3 / p4 / p5 + plot_layout(heights = c(2,4,3,2)) + plot_annotation(tag_levels = 'i')
+ggsave('fig/relationships.png', dpi = 1200, height = 12, width = 4)
 
 p6 + (p7 / p8) + plot_layout(guides = 'collect')
 ggsave('fig/asymmetries.png', dpi = 600, height = 4, width = 6)
