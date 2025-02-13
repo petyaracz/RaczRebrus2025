@@ -132,28 +132,35 @@ p5 = w |>
   theme(axis.text.x.top = element_blank(), axis.ticks.x.top = element_blank(), axis.title.x.top = element_blank())
 
 p6 = w |> 
+  count(coda, name = 'coda_count') |> 
   mutate(
-    coda2 = str_replace_all(coda, c('s' = 'sz', 'ž' = 'zs', 'š' = 's'))
+    coda2 = coda |> 
+      str_replace_all(c('s' = 'sz', 'ž' = 'zs', 'š' = 's')) |> 
+      fct_reorder(coda_count),
   ) |> 
-  ggplot(aes(coda2)) +
-  geom_bar() +
+  ggplot(aes(coda2,coda_count)) +
+  geom_col() +
   coord_flip() +
   theme_bw() +
   xlab('tő végződés') +
   ylab('tövek száma')
 
 p7 = w |> 
-  ggplot(aes(nsyl2,fill = ending_ns)) +
-  geom_bar(position = position_dodge()) +
+  count(nsyl2,ending_ns) |> 
+  add_row(nsyl2 = "1", ending_ns = TRUE, n = 0) |> 
+  ggplot(aes(nsyl2,n,fill = ending_ns)) +
+  geom_col(position = position_dodge2()) +
   scale_fill_colorblind(labels = c('egyéb','-ns (docens, variáns)'), name = 'tő végződés') +
   coord_flip() +
   theme_bw() +
   xlab('tő szótagszáma') +
   ylab('tövek száma')
 
-p8 = w |> 
-  ggplot(aes(nsize2,fill = ending_ns)) +
-  geom_bar(position = position_dodge()) +
+p8 = w |>
+  count(nsize2,ending_ns) |> 
+  add_row(nsize2 = "6+", ending_ns = TRUE, n = 0) |> 
+  ggplot(aes(nsize2,n,fill = ending_ns)) +
+  geom_col(position = position_dodge2()) +
   scale_fill_colorblind(labels = c('egyéb','-ns (docens, variáns)'), name = 'tő végződés') +
   coord_flip() +
   theme_bw() +
