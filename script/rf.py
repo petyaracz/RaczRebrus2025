@@ -9,8 +9,10 @@ import numpy as np
 from sklearn import preprocessing
 from sklearn.model_selection import train_test_split
 from sklearn.ensemble import RandomForestRegressor
+from sklearn.dummy import DummyRegressor
 from sklearn.metrics import classification_report, confusion_matrix, accuracy_score
 from sklearn.model_selection import GridSearchCV
+from sklearn.model_selection import cross_val_score
 
 d = pd.read_csv('dat/wide.tsv', sep='\t')
 
@@ -57,6 +59,9 @@ print("Best cross-validation score:", grid_search.best_score_)
 
 best_rf = grid_search.best_estimator_
 
+dummy = DummyRegressor(strategy='mean')
+dummy_scores = cross_val_score(dummy, X_train, y_train, cv=3, scoring='r2')
+
 varimp = pd.Series(best_rf.feature_importances_, index=X_train.columns).sort_values(ascending=False)
 
 # save best_params_ and best_score_ and varimp to disk
@@ -69,6 +74,9 @@ with open('dat/best_params.txt', 'w') as f:
 
 with open('dat/best_score.txt', 'w') as f:
     f.write(str(best_score))
+
+with open('dat/dummy_score.txt', 'w') as f:
+    f.write(str(dummy_scores))
 
 varimp.to_csv('dat/varimp.tsv', sep='\t')
 

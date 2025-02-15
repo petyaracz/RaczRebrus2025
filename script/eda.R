@@ -9,6 +9,7 @@ library(patchwork)
 library(broom.mixed)
 library(sjPlot)
 library(lme4)
+library(ggtext)
 
 # -- read -- #
 
@@ -128,7 +129,7 @@ p5 = w |>
   geom_smooth(method = 'lm') +
   theme_bw() +
   scale_x_continuous(sec.axis = sec_axis(trans = ~ plogis(.), name = 'p(klienset)', breaks = c(.01,.1,.5,.9,.99)), name = 'log (klienset / klienst)') +
-  scale_y_continuous(sec.axis = sec_axis(trans = ~ exp(.), name = 'tő gyakoriság / 10^6 szó', breaks = c(1,2,5,10,20,30)), name = 'log (tő gyakoriság / 10^6 szó)') +
+  scale_y_continuous(sec.axis = sec_axis(trans = ~ exp(.), name = expression(paste("tő gyakoriság / ", 10^6, " szó")), breaks = c(1,2,5,10,20,30)), name = expression(paste('log (tő gyakoriság / ', 10^6, ' szó)'))) +
   theme(axis.text.x.top = element_blank(), axis.ticks.x.top = element_blank(), axis.title.x.top = element_blank())
 
 p6 = w |> 

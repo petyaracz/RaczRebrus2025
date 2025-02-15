@@ -1,9 +1,0 @@
-- az n+s/sz csoportban azert van kevesbe kotohangzo, mint a l/r/j+s/sz csoportban, mert az n igazabol egy nazalizalt maganhangzo
-
-- a ns alakok es az nsz alakok viselkedese kozotti kulonbseget nem magyarazza se a fonetika se a fonologia, csak az, hogy az ns alakok mind latin eredetuek
-
-1. kotohangzo!
-2. de az ns nsz ennek a forditottjat csinalja
-3. latin szavak!
-
-magyar nyelvbe!
