@@ -16,7 +16,7 @@ library(ggtext)
 l = read_tsv('dat/long.tsv')
 w = read_tsv('dat/wide.tsv')
 uesz_df = read_tsv('dat/uesz_ns.tsv')
-varimp = read_tsv('dat/varimp.tsv')
+varimp = read_tsv('dat/best_rf_varimp.tsv')
 
 # -- example set -- #
 
@@ -37,47 +37,39 @@ w = w |>
   mutate(
     ending_ns = coda1 == 'n' & coda2 == 'š',
     ending_ns = ifelse(lemma == 'siemens', F, ending_ns),
-    neighbourhood_size = factor(neighbourhood_size, ordered = T),
     nsyl = factor(nsyl, ordered = T),
     lfpm10 = lv_lfpm10 + nlv_lfpm10,
     koda2 = str_replace_all(coda2, c('s' = 'sz', 'š' = 's', 'ž' = 'zs')),
     ns = coda1 == 'n', coda2 == 'š',
     nsyl2 = case_when(
-      nsyl == 1 ~ "1",
-      nsyl == 2 ~ "2",
-      nsyl > 2 ~ "3+",
-    ) |> 
-      fct_relevel('3+','2','1'),
-    nsize2 = case_when(
-      neighbourhood_size == 0 ~ "0",
-      neighbourhood_size == 1 ~ "1",
-      neighbourhood_size %in% 2:5 ~ "2-5",
-      neighbourhood_size > 5 ~ "6+",
-    ) |> 
-      fct_relevel('6+','2-5','1','0')
+      nsyl == 1 ~ '1',
+      nsyl == 2 ~ '2',
+      nsyl > 2 ~ '3+',
+    )
   )
+
+# drop adjective-like ones
+uesz_df = uesz_df |> 
+  filter(lemma %in% l$lemma)
 
 # -- varimp -- #
 
-varimp = arrange(varimp, `0`)
-
 változó = c(
-  'első msh: l',
-  'második msh: zs',
-  'második msh: z',
-  'első msh: j',
+  '-ns',
+  'szótagok száma',
   'első msh: n',
   'második msh: s',
-  'második msh: sz',
   'első msh: r',
-  'szótagok száma',
-  'szomszédok száma',
   'log gyakoriság',
-  '-ns'
+  'második msh: sz',
+  'első msh: j',
+  'második msh: z',
+  'második msh: zs',
+  'első msh: l'
 )
 
 p0 = varimp |> 
-  rename(imp = `0`) |> 
+  rename(imp = IncNodePurity) |> 
   bind_cols(változó) |> 
   mutate(változó = fct_reorder(változó, imp)) |> 
   ggplot(aes(imp,változó)) +
@@ -106,33 +98,24 @@ p2 = w |>
   theme(axis.text.x.bottom = element_blank(), axis.ticks.x.bottom = element_blank(), axis.title.x.bottom = element_blank())
 
 p3 = w |> 
-  ggplot(aes(nsize2,lv_log_odds)) +
-  geom_rain() +
-  theme_bw() +
-  coord_flip() +
-  xlab('hangtani szomszédok száma') +
-  scale_y_continuous(sec.axis = sec_axis(trans = ~ plogis(.), name = 'p(klienset)', breaks = c(.01,.1,.5,.9,.99)), name = 'log (klienset / klienst)') +
-  theme(axis.text.x = element_blank(), axis.ticks.x = element_blank(), axis.title.x = element_blank())
-
-p4 = w |> 
   ggplot(aes(nsyl2,lv_log_odds)) +
   geom_rain() +
   theme_bw() +
   coord_flip() +
   xlab('tő szótagszáma') +
   scale_y_continuous(sec.axis = sec_axis(trans = ~ plogis(.), name = 'p(klienset)', breaks = c(.01,.1,.5,.9,.99)), name = 'log (klienset / klienst)') +
-  theme(axis.text.x = element_blank(), axis.ticks.x = element_blank(), axis.title.x = element_blank())
+  theme(axis.text.x.top = element_blank(), axis.ticks.x.top = element_blank(), axis.title.x.top = element_blank())
 
-p5 = w |> 
+p4 = w |> 
   ggplot(aes(lv_log_odds,llfpm10)) +
   geom_point() +
   geom_smooth(method = 'lm') +
   theme_bw() +
   scale_x_continuous(sec.axis = sec_axis(trans = ~ plogis(.), name = 'p(klienset)', breaks = c(.01,.1,.5,.9,.99)), name = 'log (klienset / klienst)') +
-  scale_y_continuous(sec.axis = sec_axis(trans = ~ exp(.), name = expression(paste("tő gyakoriság / ", 10^6, " szó")), breaks = c(1,2,5,10,20,30)), name = expression(paste('log (tő gyakoriság / ', 10^6, ' szó)'))) +
-  theme(axis.text.x.top = element_blank(), axis.ticks.x.top = element_blank(), axis.title.x.top = element_blank())
+  scale_y_continuous(sec.axis = sec_axis(trans = ~ exp(.), name = expression(paste("tő gyakoriság / ", 10^6, " szó")), breaks = c(1,2,5,10,20,30)), name = expression(paste('log (tő gyakoriság / ', 10^6, ' szó)')))# +
+  #theme(axis.text.x.top = element_blank(), axis.ticks.x.top = element_blank(), axis.title.x.top = element_blank())
 
-p6 = w |> 
+p5 = w |> 
   count(coda, name = 'coda_count') |> 
   mutate(
     coda2 = coda |> 
@@ -146,7 +129,7 @@ p6 = w |>
   xlab('tő végződés') +
   ylab('tövek száma')
 
-p7 = w |> 
+p6 = w |> 
   count(nsyl2,ending_ns) |> 
   add_row(nsyl2 = "1", ending_ns = TRUE, n = 0) |> 
   ggplot(aes(nsyl2,n,fill = ending_ns)) +
@@ -157,27 +140,27 @@ p7 = w |>
   xlab('tő szótagszáma') +
   ylab('tövek száma')
 
-p8 = w |>
-  count(nsize2,ending_ns) |> 
-  add_row(nsize2 = "6+", ending_ns = TRUE, n = 0) |> 
-  ggplot(aes(nsize2,n,fill = ending_ns)) +
-  geom_col(position = position_dodge2()) +
-  scale_fill_colorblind(labels = c('egyéb','-ns (docens, variáns)'), name = 'tő végződés') +
-  coord_flip() +
+p7 = uesz_df |> 
+  mutate(lemma = fct_reorder(lemma, year)) |> 
+  ggplot(aes(year,lemma)) +
+  geom_point() +
   theme_bw() +
-  xlab('hangtani szomszédok\nszáma') +
-  ylab('tövek száma')
+  ylab('tő') +
+  xlab('első megjelenés éve')
 
 # -- print -- #
 
 p0
-ggsave('fig/rf.png', dpi = 600, height = 3, width = 3)
+ggsave('fig/rf.png', dpi = 1200, height = 3, width = 3)
 
 p1
-ggsave('fig/distro.png', dpi = 600, height = 9, width = 3.5)
+ggsave('fig/distro.png', dpi = 1200, height = 9, width = 3.5)
 
-p2 / p3 / p4 / p5 + plot_layout(heights = c(2,4,3,2)) + plot_annotation(tag_levels = 'i')
-ggsave('fig/relationships.png', dpi = 1200, height = 12, width = 4)
+p2 / p3 + plot_annotation(tag_levels = 'i')
+ggsave('fig/relationships.png', dpi = 1200, height = 6, width = 4)
 
-p6 + (p7 / p8) + plot_layout(guides = 'collect')
-ggsave('fig/asymmetries.png', dpi = 600, height = 4, width = 6)
+p5 / p6
+ggsave('fig/asymmetries.png', dpi = 1200, height = 6, width = 4)
+
+p7
+ggsave('fig/borrowings.png', dpi = 1200, height = 4, width = 4)

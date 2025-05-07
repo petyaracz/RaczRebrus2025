@@ -24,17 +24,9 @@ findMatch = function(string,comparison_forms){
   any(str_detect(string,glue('{vector}$')))
 }
 
-# check n size
-countNeighbours = function(string,neighbour_forms){
-  vector = neighbour_forms[neighbour_forms != string]
-  dists = stringdist::stringdist(string, vector, method = 'lv')  
-  length(dists[dists==1])
-}
-
 # -- read -- #
 
 c = read_tsv('dat/past_acc_hun_webcorpus2_hunspell.gz')
-r = read_tsv('dat/noun_webcorpus2_hunspell.gz')
 
 # -- filter -- #
 
@@ -82,7 +74,7 @@ compounds = d |>
 compounds = compounds[!compounds %in% c('rajz','mars')]
 
 # not nouns
-not_nouns = c('gyermekkelpénz','különbözőantioxidáns','örülsz','kérsz','bírsz','vélsz','akarsz','ajz','ars','beszelsz','érsz','fájsz','fejelsz','fejsz','gyors','írsz','kélsz','manipulálsz','mersz','marsz','nyers','ócsárolsz','szarsz','remélsz','találsz','újjáélsz','ülsz','válsz','vélsz','vonsz','körbejársz','akarsz','ajz','ars','beszelsz','érsz','fejelsz','használsz','írsz','kélsz','körbejársz','marsz','nyersz','ócsárolsz','remélsz','szarsz','találsz','újjáélsz','válsz','vélsz','vonz','vonsz')
+not_nouns = c('gyermekkelpénz','különbözőantioxidáns','örülsz','kérsz','bírsz','vélsz','akarsz','ajz','ars','beszelsz','érsz','fájsz','fejelsz','fejsz','gyors','írsz','kélsz','manipulálsz','mersz','marsz','nyers','ócsárolsz','szarsz','remélsz','találsz','újjáélsz','ülsz','válsz','vélsz','vonsz','körbejársz','akarsz','ajz','ars','beszelsz','érsz','fejelsz','használsz','írsz','kélsz','körbejársz','marsz','nyersz','ócsárolsz','remélsz','szarsz','találsz','újjáélsz','válsz','vélsz','vonz','vonsz','társ', 'fals', 'torz', 'gáláns', 'domináns', 'pikáns', 'buzeráns')
 
 # also compounds
 also_compounds = '.(szimpatizáns|determináns|antioxidáns|szimpatizáns|reprezentáns|prominens|koefficiens|koncipiens)$'
@@ -97,38 +89,18 @@ d2 = d |>
     str_detect(lemma, also_compounds, negate = T),
     !form %in% wrong_forms
   )
-  
-# -- neighbours -- #
-
-range(nchar(d2$lemma_transcription))
-
-neighbour_forms = r |> 
-  mutate(trans = transcribeIPA(lemma, 'single')) |> 
-  filter(
-    nchar(trans) > 1,
-    nchar(trans) < 16 # range of length for data +- 1
-         ) |> 
-  pull(trans) |> 
-  unique()
-
-d3 = d2 |> 
-  rowwise() |> 
-  mutate(
-    neighbourhood_size = countNeighbours(lemma_transcription, neighbour_forms)
-  ) |> 
-  ungroup()
 
 # -- pairs -- #
 
-word_metadata = d3 |> 
-  distinct(lemma,lemma_transcription,coda,coda1,coda2,lemma_freq,llfpm10,neighbourhood_size,nsyl,corpus_size)
+word_metadata = d2 |> 
+  distinct(lemma,lemma_transcription,coda,coda1,coda2,lemma_freq,llfpm10,nsyl,corpus_size)
 
-lv = d3 |> 
+lv = d2 |> 
   filter(linking_vowel_present) |> 
   select(lemma,form,form_transcription,freq,lfpm10) |> 
   rename(lv_word = form, lv_transcription = form_transcription, lv_freq = freq, lv_lfpm10 = lfpm10)
 
-nlv = d3 |> 
+nlv = d2 |> 
   filter(!linking_vowel_present) |> 
   select(lemma,form,form_transcription,freq,lfpm10) |> 
   rename(nlv_word = form, nlv_transcription = form_transcription, nlv_freq = freq, nlv_lfpm10 = lfpm10)
@@ -151,9 +123,6 @@ pairs2 = pairs |>
 
 # -- write -- #
 
-write_tsv(d3, 'dat/long.tsv')
+write_tsv(d2, 'dat/long.tsv')
 write_tsv(pairs2, 'dat/wide.tsv')
 googlesheets4::write_sheet(pairs2, 'https://docs.google.com/spreadsheets/d/1EMN_Iwo6ffSRQJ7Tg_iRhw0woSTFkAtLIWmQOYm3SZ8/edit?usp=sharing', 'forms')
-# pairs2 |> 
-  # names() |> 
-  # write_lines('dat/dict.txt')

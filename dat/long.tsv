@@ -1,214 +1,201 @@
-form	lemma	xpostag	freq	corpus_size	lemma_freq	lfpm10	llfpm10	form_length	form_syl_count	lemma_length	lemma_syl_count	hunspell	lemma_transcription	form_transcription	coda	coda1	coda2	linking_vowel	linking_vowel_present	nsyl	neighbourhood_size
-pénzt	pénz	[/N][Acc]	827852	8570080167	2605825	2.9849678178722816	3.482960361881654	5	1	4	1	TRUE	pénz	pénzt	nz	n	z	NA	FALSE	1	2
-verset	vers	[/N][Acc]	87593	8570080167	786598	2.009484516426522	2.962767953382274	6	2	4	1	TRUE	verš	veršet	rš	r	š	e	TRUE	1	11
-borsot	bors	[/N][Acc]	35568	8570080167	318878	1.6180745608969576	2.570639673015841	6	2	4	1	TRUE	borš	boršot	rš	r	š	o	TRUE	1	15
-rajzot	rajz	[/N][Acc]	30319	8570080167	352496	1.5487299885692114	2.6141693086771647	6	2	4	1	TRUE	rajz	rajzot	jz	j	z	o	TRUE	1	4
-sorsot	sors	[/N][Acc]	23446	8570080167	863203	1.437083876192094	3.003128056578785	6	2	4	1	TRUE	šorš	šoršot	rš	r	š	o	TRUE	1	11
-törzset	törzs	[/N][Acc]	13011	8570080167	274003	1.1813257924104663	2.504770433385471	7	2	5	1	TRUE	törž	töržet	rž	r	ž	e	TRUE	1	7
-kontinenst	kontinens	[/N][Acc]	11784	8570080167	198435	1.1383078493766168	2.3646333910531023	10	3	9	3	TRUE	kontinenš	kontinenšt	nš	n	š	NA	FALSE	3	1
-pácienst	páciens	[/N][Acc]	11379	8570080167	248198	1.1231192129644951	2.4618133931380193	8	3	7	3	TRUE	pácienš	pácienšt	nš	n	š	NA	FALSE	3	0
-incidenst	incidens	[/N][Acc]	10852	8570080167	119048	1.1025249006316007	2.142737219220279	9	3	8	3	TRUE	incidenš	incidenšt	nš	n	š	NA	FALSE	3	0
-komponenst	komponens	[/N][Acc]	9290	8570080167	168785	1.035030829535684	2.294348963597735	10	3	9	3	TRUE	komponenš	komponenšt	nš	n	š	NA	FALSE	3	1
-klienst	kliens	[/N][Acc]	7666	8570080167	155897	0.9515839304603756	2.259852873476351	7	2	6	2	TRUE	klienš	klienšt	nš	n	š	NA	FALSE	2	0
-pajzsot	pajzs	[/N][Acc]	7629	8570080167	64579	0.9494827304374136	1.8771064312643064	7	2	5	1	TRUE	pajž	pajžot	jž	j	ž	o	TRUE	1	1
-bronzot	bronz	[/N][Acc]	7413	8570080167	89560	0.937009115663784	2.0191292004490347	7	2	5	1	TRUE	bronz	bronzot	nz	n	z	o	TRUE	1	1
-szegmenst	szegmens	[/N][Acc]	6828	8570080167	164707	0.9013086279847382	2.2837271724942587	9	2	8	2	TRUE	segmenš	segmenšt	nš	n	š	NA	FALSE	2	0
-antioxidánst	antioxidáns	[/N][Acc]	5095	8570080167	164141	0.7741593038844874	2.282232190499618	12	5	11	5	TRUE	antioxidánš	antioxidánšt	nš	n	š	NA	FALSE	5	1
-precedenst	precedens	[/N][Acc]	4218	8570080167	16786	0.6921216909455098	1.2919623343191289	10	3	9	3	TRUE	precedenš	precedenšt	nš	n	š	NA	FALSE	3	0
-asszisztenst	asszisztens	[/N][Acc]	4155	8570080167	129030	0.685586143662172	2.1777058128157964	12	3	11	3	TRUE	assistenš	assistenšt	nš	n	š	NA	FALSE	3	1
-marsot	mars	[/N][Acc]	3236	8570080167	116843	0.5770236284822768	2.134617814705583	6	2	4	1	TRUE	marš	maršot	rš	r	š	o	TRUE	1	13
-variánst	variáns	[/N][Acc]	3167	8570080167	35807	0.5676631789139541	1.6209830518004236	8	3	7	3	TRUE	variánš	variánšt	nš	n	š	NA	FALSE	3	1
-antidepresszánst	antidepresszáns	[/N][Acc]	2838	8570080167	22055	0.5200275066634974	1.4105221776564685	16	5	15	5	FALSE	antidepressánš	antidepressánšt	nš	n	š	NA	FALSE	5	0
-transzparenst	transzparens	[/N][Acc]	2241	8570080167	33659	0.41745697207710336	1.5941163245991607	13	3	12	3	TRUE	transparenš	transparenšt	nš	n	š	NA	FALSE	3	0
-delikvenst	delikvens	[/N][Acc]	1850	8570080167	14413	0.334186843945056	1.2257695021743304	10	3	9	3	TRUE	delikvenš	delikvenšt	nš	n	š	NA	FALSE	3	0
-kontingenst	kontingens	[/N][Acc]	1542	8570080167	16396	0.25509948925698034	1.2817530251865064	11	3	10	3	TRUE	kontingenš	kontingenšt	nš	n	š	NA	FALSE	3	1
-szimpatizánst	szimpatizáns	[/N][Acc]	1497	8570080167	33396	0.2422369158850945	1.59070956792371	13	4	12	4	TRUE	simpatizánš	simpatizánšt	nš	n	š	NA	FALSE	4	0
-sanszot	sansz	[/N][Acc]	1292	8570080167	10458	0.17827762920110743	1.086463753035679	7	2	5	1	TRUE	šans	šansot	ns	n	s	o	TRUE	1	0
-referenst	referens	[/N][Acc]	1289	8570080167	64846	0.17726803289544518	1.8788983075040828	9	3	8	3	TRUE	referenš	referenšt	nš	n	š	NA	FALSE	3	0
-docenst	docens	[/N][Acc]	1263	8570080167	185029	0.16841846609737293	2.334254917204184	7	2	6	2	TRUE	docenš	docenšt	nš	n	š	NA	FALSE	2	0
-szeánszot	szeánsz	[/N][Acc]	1262	8570080167	14112	0.16807447045015764	1.2166036833297866	9	3	7	2	TRUE	seáns	seánsot	ns	n	s	o	TRUE	2	1
-konzulenst	konzulens	[/N][Acc]	897	8570080167	34448	0.01980755858613425	1.604179128021454	10	3	9	3	TRUE	konzulenš	konzulenšt	nš	n	š	NA	FALSE	3	0
-konkurenst	konkurens	[/N][Acc]	846	8570080167	61817	-0.00561452141893428	1.858123040322064	10	3	9	3	TRUE	konkurenš	konkurenšt	nš	n	š	NA	FALSE	3	0
-birset	birs	[/N][Acc]	789	8570080167	8783	-0.03590788124853755	1.0106579982941712	6	2	4	1	TRUE	birš	biršet	rš	r	š	e	TRUE	1	3
-őrsöt	őrs	[/N][Acc]	759	8570080167	14102	-0.05274310856247746	1.2162958258830658	5	2	3	1	TRUE	őrš	őršöt	rš	r	š	ö	TRUE	1	10
-borzot	borz	[/N][Acc]	748	8570080167	15543	-0.05908328659349648	1.258549962548826	6	2	4	1	TRUE	borz	borzot	rz	r	z	o	TRUE	1	9
-ágenst	ágens	[/N][Acc]	740	8570080167	17621	-0.06375316472698163	1.3130456667326265	6	2	5	2	TRUE	ágenš	ágenšt	nš	n	š	NA	FALSE	2	0
-mutánst	mutáns	[/N][Acc]	718	8570080167	25703	-0.07686044021565751	1.4769989317685837	7	2	6	2	TRUE	mutánš	mutánšt	nš	n	š	NA	FALSE	2	0
-szegmenset	szegmens	[/N][Acc]	683	8570080167	164707	-0.09856418077642524	2.2837271724942587	10	3	8	2	TRUE	segmenš	segmenšet	nš	n	š	e	TRUE	2	0
-konstanst	konstans	[/N][Acc]	663	8570080167	29624	-0.11147135605318469	1.5386588145834283	9	2	8	2	TRUE	konštanš	konštanšt	nš	n	š	NA	FALSE	2	1
-balanszot	balansz	[/N][Acc]	616	8570080167	4818	-0.14340417229353233	0.7498819112043668	9	3	7	2	TRUE	balans	balansot	ns	n	s	o	TRUE	2	1
-reneszánszot	reneszánsz	[/N][Acc]	616	8570080167	137912	-0.14340417229353233	2.2066171721968133	12	4	10	3	TRUE	renesáns	renesánsot	ns	n	s	o	TRUE	3	1
-falsot	fals	[/N][Acc]	605	8570080167	16134	-0.15122950980548894	1.274757168148987	6	2	4	1	TRUE	falš	falšot	lš	l	š	o	TRUE	1	12
-reneszánszt	reneszánsz	[/N][Acc]	588	8570080167	137912	-0.16360755838181937	2.2066171721968133	11	3	10	3	TRUE	renesáns	renesánst	ns	n	s	NA	FALSE	3	1
-reagenst	reagens	[/N][Acc]	569	8570080167	7265	-0.17787261806288668	0.9282507341760824	8	3	7	3	TRUE	reagenš	reagenšt	nš	n	š	NA	FALSE	3	0
-csimpánzt	csimpánz	[/N][Acc]	485	8570080167	14768	-0.24724314585569415	1.236336799223879	9	2	8	2	TRUE	čimpánz	čimpánzt	nz	n	z	NA	FALSE	2	0
-gradienst	gradiens	[/N][Acc]	472	8570080167	7534	-0.25904288582387003	0.9440407314092908	9	3	8	3	TRUE	gradienš	gradienšt	nš	n	š	NA	FALSE	3	0
-borst	bors	[/N][Acc]	412	8570080167	318878	-0.3180876684248232	2.570639673015841	5	1	4	1	TRUE	borš	boršt	rš	r	š	NA	FALSE	1	15
-pátenst	pátens	[/N][Acc]	356	8570080167	2649	-0.38153488648508266	0.4900970738392732	7	2	6	2	TRUE	pátenš	pátenšt	nš	n	š	NA	FALSE	2	0
-emigránst	emigráns	[/N][Acc]	347	8570080167	25790	-0.3926554096670841	1.4784664576799798	9	3	8	3	TRUE	emigránš	emigránšt	nš	n	š	NA	FALSE	3	0
-protestánst	protestáns	[/N][Acc]	341	8570080167	100074	-0.4002305054654602	2.067336374607451	11	3	10	3	TRUE	proteštánš	proteštánšt	nš	n	š	NA	FALSE	3	1
-rezidenst	rezidens	[/N][Acc]	331	8570080167	31816	-0.4131568906822391	1.5696606935199662	9	3	8	3	TRUE	rezidenš	rezidenšt	nš	n	š	NA	FALSE	3	0
-sapienst	sapiens	[/N][Acc]	330	8570080167	13919	-0.4144709445800704	1.210623150379638	8	3	7	3	TRUE	šapienš	šapienšt	nš	n	š	NA	FALSE	3	0
-spekulánst	spekuláns	[/N][Acc]	314	8570080167	16306	-0.4360552363847429	1.279362553530054	10	3	9	3	TRUE	špekulánš	špekulánšt	nš	n	š	NA	FALSE	3	0
-spájzot	spájz	[/N][Acc]	307	8570080167	14198	-0.4458465089807714	1.219242287380184	7	2	5	1	TRUE	špájz	špájzot	jz	j	z	o	TRUE	1	1
-siemenst	siemens	[/N][Acc]	296	8570080167	44501	-0.4616931733990192	1.7153848858398786	8	3	7	3	TRUE	šiemenš	šiemenšt	nš	n	š	NA	FALSE	3	0
-stimulánst	stimuláns	[/N][Acc]	272	8570080167	6035	-0.4984159804237591	0.8476923899754102	10	3	9	3	TRUE	štimulánš	štimulánšt	nš	n	š	NA	FALSE	3	1
-determinánst	determináns	[/N][Acc]	239	8570080167	5836	-0.5545869835098202	0.8331303987634562	12	4	11	4	TRUE	determinánš	determinánšt	nš	n	š	NA	FALSE	4	0
-klienset	kliens	[/N][Acc]	202	8570080167	155897	-0.627633515011334	2.259852873476351	8	3	6	2	TRUE	klienš	klienšet	nš	n	š	e	TRUE	2	0
-briliánst	briliáns	[/N][Acc]	199	8570080167	25639	-0.6341318080482512	1.4759161978961852	9	3	8	3	TRUE	briliánš	briliánšt	nš	n	š	NA	FALSE	3	1
-dirigenst	dirigens	[/N][Acc]	177	8570080167	5964	-0.6850116180961512	0.8425527503229991	9	3	8	3	TRUE	dirigenš	dirigenšt	nš	n	š	NA	FALSE	3	0
-koefficienst	koefficiens	[/N][Acc]	167	8570080167	3396	-0.7102684133103745	0.5979827971139572	12	5	11	5	TRUE	koefficienš	koefficienšt	nš	n	š	NA	FALSE	5	0
-dilettánst	dilettáns	[/N][Acc]	161	8570080167	17057	-0.7261590084261081	1.2989177649986854	10	3	9	3	TRUE	dilettánš	dilettánšt	nš	n	š	NA	FALSE	3	0
-nüanszot	nüansz	[/N][Acc]	151	8570080167	2511	-0.7540079371647884	0.4668618282549646	8	3	6	2	FALSE	nüans	nüansot	ns	n	s	o	TRUE	2	3
-sorst	sors	[/N][Acc]	149	8570080167	863203	-0.7597986160456838	3.003128056578785	5	1	4	1	TRUE	šorš	šoršt	rš	r	š	NA	FALSE	1	11
-régenst	régens	[/N][Acc]	142	8570080167	3461	-0.7806965400749013	0.6062167148361699	7	2	6	2	TRUE	régenš	régenšt	nš	n	š	NA	FALSE	2	2
-jubilánst	jubiláns	[/N][Acc]	141	8570080167	1505	-0.783765771802578	0.24455161547190435	9	3	8	3	TRUE	jubilánš	jubilánšt	nš	n	š	NA	FALSE	3	0
-pénzet	pénz	[/N][Acc]	136	8570080167	2605825	-0.7994459760877403	3.482960361881654	6	2	4	1	TRUE	pénz	pénzet	nz	n	z	e	TRUE	1	2
-pasziánszt	pasziánsz	[/N][Acc]	135	8570080167	1483	-0.8026511159629518	0.2381562665704242	10	3	9	3	TRUE	pasiáns	pasiánst	ns	n	s	NA	FALSE	3	0
-fajanszot	fajansz	[/N][Acc]	134	8570080167	2226	-0.8058800860931502	0.4145402755407317	9	3	7	2	TRUE	fajans	fajansot	ns	n	s	o	TRUE	2	0
-opponenst	opponens	[/N][Acc]	131	8570080167	4905	-0.8157135888021936	0.7576541272580095	9	3	8	3	TRUE	opponenš	opponenšt	nš	n	š	NA	FALSE	3	0
-szeánszt	szeánsz	[/N][Acc]	131	8570080167	14112	-0.8157135888021936	1.2166036833297866	8	2	7	2	TRUE	seáns	seánst	ns	n	s	NA	FALSE	2	1
-transzot	transz	[/N][Acc]	122	8570080167	16280	-0.8466250537832096	1.2786695160952246	8	2	6	1	TRUE	trans	transot	ns	n	s	o	TRUE	1	1
-fóliánst	fóliáns	[/N][Acc]	118	8570080167	987	-0.8611028771518324	0.06133226821167893	8	3	7	3	TRUE	fóliánš	fóliánšt	nš	n	š	NA	FALSE	3	1
-siemenset	siemens	[/N][Acc]	117	8570080167	44501	-0.8647990227117962	1.7153848858398786	9	4	7	3	TRUE	šiemenš	šiemenšet	nš	n	š	e	TRUE	3	0
-szextánst	szextáns	[/N][Acc]	116	8570080167	850	-0.8685268952310394	-0.00356595874366508	9	2	8	2	TRUE	sextánš	sextánšt	nš	n	š	NA	FALSE	2	1
-kontinenset	kontinens	[/N][Acc]	109	8570080167	198435	-0.8955583865173342	2.3646333910531023	11	4	9	3	TRUE	kontinenš	kontinenšet	nš	n	š	e	TRUE	3	1
-recenzenst	recenzens	[/N][Acc]	107	8570080167	3795	-0.9036011067727482	0.6462268957735413	10	3	9	3	TRUE	recenzenš	recenzenšt	nš	n	š	NA	FALSE	3	0
-adszorbenst	adszorbens	[/N][Acc]	105	8570080167	1512	-0.9117955853880196	0.24656690670722983	11	3	10	3	TRUE	adsorbenš	adsorbenšt	nš	n	š	NA	FALSE	3	1
-balanszt	balansz	[/N][Acc]	104	8570080167	4818	-0.9159515451591774	0.7498819112043668	8	2	7	2	TRUE	balans	balanst	ns	n	s	NA	FALSE	2	1
-disszidenst	disszidens	[/N][Acc]	100	8570080167	4611	-0.9329848844579578	0.7308102377614497	11	3	10	3	TRUE	dissidenš	dissidenšt	nš	n	š	NA	FALSE	3	0
-intendánst	intendáns	[/N][Acc]	99	8570080167	4037	-0.937349689860408	0.6730738649523565	10	3	9	3	TRUE	intendánš	intendánšt	nš	n	š	NA	FALSE	3	0
-pasziánszot	pasziánsz	[/N][Acc]	98	8570080167	1483	-0.9417588087654628	0.2381562665704242	11	4	9	3	TRUE	pasiáns	pasiánsot	ns	n	s	o	TRUE	3	0
-pácienset	páciens	[/N][Acc]	98	8570080167	248198	-0.9417588087654628	2.4618133931380193	9	4	7	3	TRUE	pácienš	pácienšet	nš	n	š	e	TRUE	3	0
-komponenset	komponens	[/N][Acc]	95	8570080167	168785	-0.95526127916911	2.294348963597735	11	4	9	3	TRUE	komponenš	komponenšet	nš	n	š	e	TRUE	3	1
-abszorbenst	abszorbens	[/N][Acc]	93	8570080167	2515	-0.9645019359040228	0.4675531049339884	11	3	10	3	TRUE	absorbenš	absorbenšt	nš	n	š	NA	FALSE	3	1
-ministránst	ministráns	[/N][Acc]	92	8570080167	8676	-0.9691970571124026	1.0053346588841978	11	3	10	3	TRUE	miništránš	miništránšt	nš	n	š	NA	FALSE	3	0
-posztamenst	posztamens	[/N][Acc]	92	8570080167	2777	-0.9691970571124026	0.5105909952922998	11	3	10	3	TRUE	postamenš	postamenšt	nš	n	š	NA	FALSE	3	0
-kvadránst	kvadráns	[/N][Acc]	90	8570080167	2026	-0.9787423750186328	0.3736545565663038	9	2	8	2	TRUE	kvadránš	kvadránšt	nš	n	š	NA	FALSE	2	0
-csimpánzot	csimpánz	[/N][Acc]	81	8570080167	14768	-1.024499865579308	1.236336799223879	10	3	8	2	TRUE	čimpánz	čimpánzot	nz	n	z	o	TRUE	2	0
-elegánst	elegáns	[/N][Acc]	81	8570080167	374208	-1.024499865579308	2.6401281833632133	8	3	7	3	TRUE	elegánš	elegánšt	nš	n	š	NA	FALSE	3	1
-laboránst	laboráns	[/N][Acc]	80	8570080167	2841	-1.0298948974660145	0.520486349264978	9	3	8	3	TRUE	laboránš	laboránšt	nš	n	š	NA	FALSE	3	0
-szuperintendenst	szuperintendens	[/N][Acc]	80	8570080167	1540	-1.0298948974660145	0.2545358363785052	16	5	15	5	TRUE	superintendenš	superintendenšt	nš	n	š	NA	FALSE	5	0
-tranzienst	tranziens	[/N][Acc]	73	8570080167	6311	-1.069662024337502	0.8671132957168178	10	3	9	3	TRUE	tranzienš	tranzienšt	nš	n	š	NA	FALSE	3	0
-hársot	hárs	[/N][Acc]	70	8570080167	19071	-1.087886844443701	1.3473885816921616	6	2	4	1	TRUE	hárš	háršot	rš	r	š	o	TRUE	1	4
-konzultánst	konzultáns	[/N][Acc]	70	8570080167	5729	-1.087886844443701	0.8250939377916547	11	3	10	3	TRUE	konzultánš	konzultánšt	nš	n	š	NA	FALSE	3	0
-nonszenszt	nonszensz	[/N][Acc]	69	8570080167	16551	-1.0941357937207026	1.2858393542194446	10	2	9	2	TRUE	nonsens	nonsenst	ns	n	s	NA	FALSE	2	0
-deviánst	deviáns	[/N][Acc]	66	8570080167	16530	-1.1134409489160892	1.2852879691134895	8	3	7	3	TRUE	deviánš	deviánšt	nš	n	š	NA	FALSE	3	1
-spájzt	spájz	[/N][Acc]	65	8570080167	14198	-1.1200715278151023	1.219242287380184	6	1	5	1	TRUE	špájz	špájzt	jz	j	z	NA	FALSE	1	1
-dominánst	domináns	[/N][Acc]	63	8570080167	88676	-1.133644335004376	2.0148212102561733	9	3	8	3	TRUE	dominánš	dominánšt	nš	n	š	NA	FALSE	3	0
-félszet	félsz	[/N][Acc]	58	8570080167	6323	-1.169556890895021	0.8679382973552604	7	2	5	1	FALSE	féls	félset	ls	l	s	e	TRUE	1	5
-diverzánst	diverzáns	[/N][Acc]	50	8570080167	1603	-1.234014880121939	0.27194863789618695	10	3	9	3	TRUE	diverzánš	diverzánšt	nš	n	š	NA	FALSE	3	0
-infánst	infáns	[/N][Acc]	50	8570080167	360	-1.234014880121939	-0.3766823836906706	7	2	6	2	TRUE	infánš	infánšt	nš	n	š	NA	FALSE	2	0
-transzt	transz	[/N][Acc]	45	8570080167	16280	-1.279772370682614	1.2786695160952246	7	1	6	1	TRUE	trans	transt	ns	n	s	NA	FALSE	1	1
-redundánst	redundáns	[/N][Acc]	44	8570080167	8068	-1.2895322079717704	0.97378100508277	10	3	9	3	FALSE	redundánš	redundánšt	nš	n	š	NA	FALSE	3	0
-reprezentánst	reprezentáns	[/N][Acc]	44	8570080167	8752	-1.2895322079717704	1.0091224245313977	13	4	12	4	TRUE	reprezentánš	reprezentánšt	nš	n	š	NA	FALSE	4	0
-bronzt	bronz	[/N][Acc]	41	8570080167	89560	-1.3202010277382223	2.0191292004490347	6	1	5	1	TRUE	bronz	bronzt	nz	n	z	NA	FALSE	1	1
-referenset	referens	[/N][Acc]	40	8570080167	64846	-1.3309248931299955	1.8788983075040828	10	4	8	3	TRUE	referenš	referenšet	nš	n	š	e	TRUE	3	0
-sapienset	sapiens	[/N][Acc]	40	8570080167	13919	-1.3309248931299955	1.210623150379638	9	4	7	3	TRUE	šapienš	šapienšet	nš	n	š	e	TRUE	3	0
-traverzet	traverz	[/N][Acc]	40	8570080167	1380	-1.3309248931299955	0.20689420194327868	9	3	7	2	TRUE	traverz	traverzet	rz	r	z	e	TRUE	2	0
-törzst	törzs	[/N][Acc]	39	8570080167	274003	-1.3419202774314587	2.504770433385471	6	1	5	1	TRUE	törž	töržt	rž	r	ž	NA	FALSE	1	7
-félszt	félsz	[/N][Acc]	37	8570080167	6323	-1.3647831603909628	0.8679382973552604	6	1	5	1	FALSE	féls	félst	ls	l	s	NA	FALSE	1	5
-konstansot	konstans	[/N][Acc]	35	8570080167	29624	-1.388916840107682	1.5386588145834283	10	3	8	2	TRUE	konštanš	konštanšot	nš	n	š	o	TRUE	2	1
-spejzt	spejz	[/N][Acc]	35	8570080167	3158	-1.388916840107682	0.5664272412143176	6	1	5	1	TRUE	špejz	špejzt	jz	j	z	NA	FALSE	1	1
-verst	vers	[/N][Acc]	34	8570080167	786598	-1.4015059674157029	2.962767953382274	5	1	4	1	TRUE	verš	veršt	rš	r	š	NA	FALSE	1	11
-exponenst	exponens	[/N][Acc]	33	8570080167	860	-1.4144709445800705	0.00151356678560985	9	3	8	3	TRUE	exponenš	exponenšt	nš	n	š	NA	FALSE	3	0
-marst	mars	[/N][Acc]	32	8570080167	116843	-1.427834906138052	2.134617814705583	5	1	4	1	TRUE	marš	maršt	rš	r	š	NA	FALSE	1	13
-nonszenszet	nonszensz	[/N][Acc]	32	8570080167	16551	-1.427834906138052	1.2858393542194446	11	3	9	2	TRUE	nonsens	nonsenset	ns	n	s	e	TRUE	2	0
-ornamenst	ornamens	[/N][Acc]	32	8570080167	1201	-1.427834906138052	0.1465581229449482	9	3	8	3	TRUE	ornamenš	ornamenšt	nš	n	š	NA	FALSE	3	0
-kvócienst	kvóciens	[/N][Acc]	31	8570080167	530	-1.4416231906236852	-0.20870901485716883	9	3	8	3	TRUE	kvócienš	kvócienšt	nš	n	š	NA	FALSE	3	0
-tangenst	tangens	[/N][Acc]	29	8570080167	1382	-1.4705868865590015	0.20752315858022177	8	2	7	2	TRUE	tangenš	tangenšt	nš	n	š	NA	FALSE	2	0
-traverzt	traverz	[/N][Acc]	27	8570080167	1380	-1.5016211202989704	0.20689420194327868	8	2	7	2	TRUE	traverz	traverzt	rz	r	z	NA	FALSE	2	0
-tremenst	tremens	[/N][Acc]	27	8570080167	1099	-1.5016211202989704	0.10801280796553274	8	2	7	2	FALSE	tremenš	tremenšt	nš	n	š	NA	FALSE	2	0
-társt	társ	[/N][Acc]	27	8570080167	980856	-1.5016211202989704	3.0586203685939397	5	1	4	1	TRUE	tárš	táršt	rš	r	š	NA	FALSE	1	9
-nüánszot	nüánsz	[/N][Acc]	26	8570080167	760	-1.5180115364871398	-0.05217129217716645	8	3	6	2	TRUE	nüáns	nüánsot	ns	n	s	o	TRUE	2	1
-asszisztenset	asszisztens	[/N][Acc]	25	8570080167	129030	-1.5350448757859203	2.1777058128157964	13	4	11	3	TRUE	assistenš	assistenšet	nš	n	š	e	TRUE	3	1
-buzeránst	buzeráns	[/N][Acc]	25	8570080167	1414	-1.5350448757859203	0.2174645250029228	9	3	8	3	TRUE	buzeránš	buzeránšt	nš	n	š	NA	FALSE	3	0
-antioxidánsot	antioxidáns	[/N][Acc]	24	8570080167	164141	-1.552773642746352	2.282232190499618	13	6	11	5	TRUE	antioxidánš	antioxidánšot	nš	n	š	o	TRUE	5	1
-formánst	formáns	[/N][Acc]	24	8570080167	616	-1.552773642746352	-0.14340417229353233	8	2	7	2	TRUE	formánš	formánšt	nš	n	š	NA	FALSE	2	2
-adjutánst	adjutáns	[/N][Acc]	23	8570080167	611	-1.571257048440365	-0.14694367421540358	9	3	8	3	TRUE	adjutánš	adjutánšt	nš	n	š	NA	FALSE	3	0
-incidenset	incidens	[/N][Acc]	23	8570080167	119048	-1.571257048440365	2.142737219220279	10	4	8	3	TRUE	incidenš	incidenšet	nš	n	š	e	TRUE	3	0
-szimulánst	szimuláns	[/N][Acc]	23	8570080167	612	-1.571257048440365	-0.14623346231239667	10	3	9	3	TRUE	simulánš	simulánšt	nš	n	š	NA	FALSE	3	0
-pajzst	pajzs	[/N][Acc]	22	8570080167	64579	-1.5905622036357516	1.8771064312643064	6	1	5	1	TRUE	pajž	pajžt	jž	j	ž	NA	FALSE	1	1
-komplemenst	komplemens	[/N][Acc]	21	8570080167	1090	-1.6107655897240385	0.10444161348266576	11	3	10	3	TRUE	komplemenš	komplemenšt	nš	n	š	NA	FALSE	3	0
-rajzt	rajz	[/N][Acc]	21	8570080167	352496	-1.6107655897240385	2.6141693086771647	5	1	4	1	TRUE	rajz	rajzt	jz	j	z	NA	FALSE	1	4
-variánsot	variáns	[/N][Acc]	17	8570080167	35807	-1.702535963079684	1.6209830518004236	9	4	7	3	TRUE	variánš	variánšot	nš	n	š	o	TRUE	3	1
-delikvenset	delikvens	[/N][Acc]	16	8570080167	14413	-1.728864901802033	1.2257695021743304	11	4	9	3	TRUE	delikvenš	delikvenšet	nš	n	š	e	TRUE	3	0
-társot	társ	[/N][Acc]	16	8570080167	980856	-1.728864901802033	3.0586203685939397	6	2	4	1	TRUE	tárš	táršot	rš	r	š	o	TRUE	1	9
-hárst	hárs	[/N][Acc]	14	8570080167	19071	-1.7868568487797198	1.3473885816921616	5	1	4	1	TRUE	hárš	háršt	rš	r	š	NA	FALSE	1	4
-konferanszot	konferansz	[/N][Acc]	14	8570080167	849	-1.7868568487797198	-0.00407719421400516	12	4	10	3	TRUE	konferans	konferansot	ns	n	s	o	TRUE	3	0
-szekundánst	szekundáns	[/N][Acc]	14	8570080167	768	-1.7868568487797198	-0.04762366442644582	11	3	10	3	TRUE	sekundánš	sekundánšt	nš	n	š	NA	FALSE	3	1
-pikánst	pikáns	[/N][Acc]	13	8570080167	37356	-1.819041532151121	1.6393754822721822	7	2	6	2	TRUE	pikánš	pikánšt	nš	n	š	NA	FALSE	2	1
-sanszt	sansz	[/N][Acc]	13	8570080167	10458	-1.819041532151121	1.086463753035679	6	1	5	1	TRUE	šans	šanst	ns	n	s	NA	FALSE	1	0
-spiránst	spiráns	[/N][Acc]	13	8570080167	124	-1.819041532151121	-0.8395631992957228	8	2	7	2	TRUE	špiránš	špiránšt	nš	n	š	NA	FALSE	2	1
-szignifikánst	szignifikáns	[/N][Acc]	13	8570080167	80012	-1.819041532151121	1.9701702418209468	13	4	12	4	TRUE	signifikánš	signifikánšt	nš	n	š	NA	FALSE	4	1
-deszcendenst	deszcendens	[/N][Acc]	12	8570080167	349	-1.853803638410333	-0.3901594574987779	12	3	11	3	TRUE	descendenš	descendenšt	nš	n	š	NA	FALSE	3	0
-nörszöt	nörsz	[/N][Acc]	12	8570080167	162	-1.853803638410333	-0.7234698699153269	7	2	5	1	TRUE	nörs	nörsöt	rs	r	s	ö	TRUE	1	0
-precedenset	precedens	[/N][Acc]	12	8570080167	16786	-1.853803638410333	1.2919623343191289	11	4	9	3	TRUE	precedenš	precedenšet	nš	n	š	e	TRUE	3	0
-valdenst	valdens	[/N][Acc]	12	8570080167	1061	-1.853803638410333	0.09273049944338284	8	2	7	2	FALSE	valdenš	valdenšt	nš	n	š	NA	FALSE	2	0
-ágenset	ágens	[/N][Acc]	12	8570080167	17621	-1.853803638410333	1.3130456667326265	7	3	5	2	TRUE	ágenš	ágenšet	nš	n	š	e	TRUE	2	0
-falst	fals	[/N][Acc]	11	8570080167	16134	-1.8915921992997329	1.274757168148987	5	1	4	1	TRUE	falš	falšt	lš	l	š	NA	FALSE	1	12
-toleránst	toleráns	[/N][Acc]	11	8570080167	32053	-1.8915921992997329	1.5728837990839963	9	3	8	3	TRUE	toleránš	toleránšt	nš	n	š	NA	FALSE	3	0
-torzot	torz	[/N][Acc]	11	8570080167	42242	-1.8915921992997329	1.6927595877666917	6	2	4	1	TRUE	torz	torzot	rz	r	z	o	TRUE	1	7
-approximánst	approximáns	[/N][Acc]	10	8570080167	170	-1.9329848844579576	-0.7025359630796839	12	4	11	4	FALSE	approximánš	approximánšt	nš	n	š	NA	FALSE	4	0
-perverzt	perverz	[/N][Acc]	10	8570080167	30831	-1.9329848844579576	1.5560027267894287	8	2	7	2	TRUE	perverz	perverzt	rz	r	z	NA	FALSE	2	1
-birst	birs	[/N][Acc]	9	8570080167	8783	-1.978742375018633	1.0106579982941712	5	1	4	1	TRUE	birš	biršt	rš	r	š	NA	FALSE	1	3
-fajanszt	fajansz	[/N][Acc]	9	8570080167	2226	-1.978742375018633	0.4145402755407317	8	2	7	2	TRUE	fajans	fajanst	ns	n	s	NA	FALSE	2	0
-frappánst	frappáns	[/N][Acc]	9	8570080167	37305	-1.978742375018633	1.6387821598676593	9	2	8	2	TRUE	frappánš	frappánšt	nš	n	š	NA	FALSE	2	0
-nüanszt	nüansz	[/N][Acc]	9	8570080167	2511	-1.978742375018633	0.4668618282549646	7	2	6	2	FALSE	nüans	nüanst	ns	n	s	NA	FALSE	2	3
-rezultánst	rezultáns	[/N][Acc]	9	8570080167	104	-1.978742375018633	-0.9159515451591774	10	3	9	3	TRUE	rezultánš	rezultánšt	nš	n	š	NA	FALSE	3	0
-evolvenst	evolvens	[/N][Acc]	8	8570080167	333	-2.0298948974660145	-0.410540650951638	9	3	8	3	TRUE	evolvenš	evolvenšt	nš	n	š	NA	FALSE	3	0
-pátenset	pátens	[/N][Acc]	8	8570080167	2649	-2.0298948974660145	0.4900970738392732	8	3	6	2	TRUE	pátenš	pátenšet	nš	n	š	e	TRUE	2	0
-inverzt	inverz	[/N][Acc]	7	8570080167	14329	-2.087886844443701	1.2232309982188048	7	2	6	2	TRUE	inverz	inverzt	rz	r	z	NA	FALSE	2	0
-posztamenset	posztamens	[/N][Acc]	7	8570080167	2777	-2.087886844443701	0.5105909952922998	12	4	10	3	TRUE	postamenš	postamenšet	nš	n	š	e	TRUE	3	0
-revánst	reváns	[/N][Acc]	7	8570080167	2929	-2.087886844443701	0.5337344872236408	7	2	6	2	TRUE	revánš	revánšt	nš	n	š	NA	FALSE	2	0
-csuszpájzt	csuszpájz	[/N][Acc]	6	8570080167	88	-2.1548336340743144	-0.9885022123077892	10	2	9	2	TRUE	čuspájz	čuspájzt	jz	j	z	NA	FALSE	2	0
-manipulánst	manipuláns	[/N][Acc]	6	8570080167	125	-2.1548336340743144	-0.8360748714499014	11	4	10	4	FALSE	manipulánš	manipulánšt	nš	n	š	NA	FALSE	4	0
-mutánsot	mutáns	[/N][Acc]	6	8570080167	25703	-2.1548336340743144	1.4769989317685837	8	3	6	2	TRUE	mutánš	mutánšot	nš	n	š	o	TRUE	2	0
-régenset	régens	[/N][Acc]	6	8570080167	3461	-2.1548336340743144	0.6062167148361699	8	3	6	2	TRUE	régenš	régenšet	nš	n	š	e	TRUE	2	2
-tremenset	tremens	[/N][Acc]	6	8570080167	1099	-2.1548336340743144	0.10801280796553274	9	3	7	2	FALSE	tremenš	tremenšet	nš	n	š	e	TRUE	2	0
-extravagánst	extravagáns	[/N][Acc]	5	8570080167	22582	-2.234014880121939	1.4207775186092415	12	4	11	4	TRUE	extravagánš	extravagánšt	nš	n	š	NA	FALSE	4	0
-konferanszt	konferansz	[/N][Acc]	5	8570080167	849	-2.234014880121939	-0.00407719421400516	11	3	10	3	TRUE	konferans	konferanst	ns	n	s	NA	FALSE	3	0
-pedánst	pedáns	[/N][Acc]	5	8570080167	5715	-2.234014880121939	0.8240313502733427	7	2	6	2	TRUE	pedánš	pedánšt	nš	n	š	NA	FALSE	2	0
-rezolvenst	rezolvens	[/N][Acc]	5	8570080167	56	-2.234014880121939	-1.1847968574517571	10	3	9	3	TRUE	rezolvenš	rezolvenšt	nš	n	š	NA	FALSE	3	0
-disszonánst	disszonáns	[/N][Acc]	4	8570080167	5491	-2.3309248931299953	0.806666559251419	11	3	10	3	TRUE	dissonánš	dissonánšt	nš	n	š	NA	FALSE	3	0
-docenset	docens	[/N][Acc]	4	8570080167	185029	-2.3309248931299953	2.334254917204184	8	3	6	2	TRUE	docenš	docenšet	nš	n	š	e	TRUE	2	0
-dominánsot	domináns	[/N][Acc]	4	8570080167	88676	-2.3309248931299953	2.0148212102561733	10	4	8	3	TRUE	dominánš	dominánšot	nš	n	š	o	TRUE	3	0
-forszot	forsz	[/N][Acc]	4	8570080167	275	-2.3309248931299953	-0.4936521906276952	7	2	5	1	TRUE	fors	forsot	rs	r	s	o	TRUE	1	1
-fóliánsot	fóliáns	[/N][Acc]	4	8570080167	987	-2.3309248931299953	0.06133226821167893	9	4	7	3	TRUE	fóliánš	fóliánšot	nš	n	š	o	TRUE	3	1
-koefficienset	koefficiens	[/N][Acc]	4	8570080167	3396	-2.3309248931299953	0.5979827971139572	13	6	11	5	TRUE	koefficienš	koefficienšet	nš	n	š	e	TRUE	5	0
-markánst	markáns	[/N][Acc]	4	8570080167	103287	-2.3309248931299953	2.0810607789440447	8	2	7	2	TRUE	markánš	markánšt	nš	n	š	NA	FALSE	2	1
-trankvillánst	trankvilláns	[/N][Acc]	4	8570080167	149	-2.3309248931299953	-0.7597986160456838	13	3	12	3	TRUE	trankvillánš	trankvillánšt	nš	n	š	NA	FALSE	3	0
-dezinficienst	dezinficiens	[/N][Acc]	3	8570080167	201	-2.455863629738295	-0.629788827037469	13	5	12	5	FALSE	dezinficienš	dezinficienšt	nš	n	š	NA	FALSE	5	0
-efficienst	efficiens	[/N][Acc]	3	8570080167	194	-2.455863629738295	-0.6451831545277318	10	4	9	4	TRUE	efficienš	efficienšt	nš	n	š	NA	FALSE	4	0
-figuránst	figuráns	[/N][Acc]	3	8570080167	265	-2.455863629738295	-0.50973901052115	9	3	8	3	TRUE	figuránš	figuránšt	nš	n	š	NA	FALSE	3	2
-hidránst	hidráns	[/N][Acc]	3	8570080167	150	-2.455863629738295	-0.7568936254022766	8	2	7	2	TRUE	hidránš	hidránšt	nš	n	š	NA	FALSE	2	1
-kontingenset	kontingens	[/N][Acc]	3	8570080167	16396	-2.455863629738295	1.2817530251865064	12	4	10	3	TRUE	kontingenš	kontingenšet	nš	n	š	e	TRUE	3	1
-latenst	latens	[/N][Acc]	3	8570080167	2653	-2.455863629738295	0.4907523655243713	7	2	6	2	TRUE	latenš	latenšt	nš	n	š	NA	FALSE	2	0
-majoránst	majoráns	[/N][Acc]	3	8570080167	62	-2.455863629738295	-1.140593194959704	9	3	8	3	TRUE	majoránš	majoránšt	nš	n	š	NA	FALSE	3	0
-reagenset	reagens	[/N][Acc]	3	8570080167	7265	-2.455863629738295	0.9282507341760824	9	4	7	3	TRUE	reagenš	reagenšet	nš	n	š	e	TRUE	3	0
-spejzet	spejz	[/N][Acc]	3	8570080167	3158	-2.455863629738295	0.5664272412143176	7	2	5	1	TRUE	špejz	špejzet	jz	j	z	e	TRUE	1	1
-szimpatizánsot	szimpatizáns	[/N][Acc]	3	8570080167	33396	-2.455863629738295	1.59070956792371	14	5	12	4	TRUE	simpatizánš	simpatizánšot	nš	n	š	o	TRUE	4	0
-vágánst	vágáns	[/N][Acc]	3	8570080167	327	-2.455863629738295	-0.4184371317976717	7	2	6	2	FALSE	vágánš	vágánšt	nš	n	š	NA	FALSE	2	1
-antidepresszánsot	antidepresszáns	[/N][Acc]	2	8570080167	22055	-2.6319548887939765	1.4105221776564685	17	6	15	5	FALSE	antidepressánš	antidepressánšot	nš	n	š	o	TRUE	5	0
-arrogánst	arrogáns	[/N][Acc]	2	8570080167	20248	-2.6319548887939765	1.37339724769224	9	3	8	3	TRUE	arrogánš	arrogánšt	nš	n	š	NA	FALSE	3	0
-buzeránsot	buzeráns	[/N][Acc]	2	8570080167	1414	-2.6319548887939765	0.2174645250029228	10	4	8	3	TRUE	buzeránš	buzeránšot	nš	n	š	o	TRUE	3	0
-flagellánst	flagelláns	[/N][Acc]	2	8570080167	344	-2.6319548887939765	-0.39642644188642767	11	3	10	3	TRUE	flagellánš	flagellánšt	nš	n	š	NA	FALSE	3	0
-gálánst	gáláns	[/N][Acc]	2	8570080167	6606	-2.6319548887939765	0.8869536848974375	7	2	6	2	TRUE	gálánš	gálánšt	nš	n	š	NA	FALSE	2	1
-komplemenset	komplemens	[/N][Acc]	2	8570080167	1090	-2.6319548887939765	0.10444161348266576	12	4	10	3	TRUE	komplemenš	komplemenšet	nš	n	š	e	TRUE	3	0
-konszonánst	konszonáns	[/N][Acc]	2	8570080167	405	-2.6319548887939765	-0.3255298612432893	11	3	10	3	TRUE	konsonánš	konsonánšt	nš	n	š	NA	FALSE	3	0
-laxánst	laxáns	[/N][Acc]	2	8570080167	36	-2.6319548887939765	-1.3766823836906703	7	2	6	2	FALSE	laxánš	laxánšt	nš	n	š	NA	FALSE	2	0
-mendikánst	mendikáns	[/N][Acc]	2	8570080167	64	-2.6319548887939765	-1.1268049104740707	10	3	9	3	TRUE	mendikánš	mendikánšt	nš	n	š	NA	FALSE	3	0
-nüánszt	nüánsz	[/N][Acc]	2	8570080167	760	-2.6319548887939765	-0.05217129217716645	7	2	6	2	TRUE	nüáns	nüánst	ns	n	s	NA	FALSE	2	1
-tangenset	tangens	[/N][Acc]	2	8570080167	1382	-2.6319548887939765	0.20752315858022177	9	3	7	2	TRUE	tangenš	tangenšet	nš	n	š	e	TRUE	2	0
-torzt	torz	[/N][Acc]	2	8570080167	42242	-2.6319548887939765	1.6927595877666917	5	1	4	1	TRUE	torz	torzt	rz	r	z	NA	FALSE	1	7
-borzt	borz	[/N][Acc]	1	8570080167	15543	-2.932984884457958	1.258549962548826	5	1	4	1	TRUE	borz	borzt	rz	r	z	NA	FALSE	1	9
-denunciánst	denunciáns	[/N][Acc]	1	8570080167	104	-2.932984884457958	-0.9159515451591774	11	4	10	4	TRUE	denunciánš	denunciánšt	nš	n	š	NA	FALSE	4	0
-forszt	forsz	[/N][Acc]	1	8570080167	275	-2.932984884457958	-0.4936521906276952	6	1	5	1	TRUE	fors	forst	rs	r	s	NA	FALSE	1	1
-fulminánst	fulmináns	[/N][Acc]	1	8570080167	464	-2.932984884457958	-0.266466903903077	10	3	9	3	TRUE	fulminánš	fulminánšt	nš	n	š	NA	FALSE	3	0
-gálánsot	gáláns	[/N][Acc]	1	8570080167	6606	-2.932984884457958	0.8869536848974375	8	3	6	2	TRUE	gálánš	gálánšot	nš	n	š	o	TRUE	2	1
-korreszpondenst	korreszpondens	[/N][Acc]	1	8570080167	3	-2.932984884457958	-2.455863629738295	15	4	14	4	TRUE	korrespondenš	korrespondenšt	nš	n	š	NA	FALSE	4	0
-nörszt	nörsz	[/N][Acc]	1	8570080167	162	-2.932984884457958	-0.7234698699153269	6	1	5	1	TRUE	nörs	nörst	rs	r	s	NA	FALSE	1	0
-protestánsot	protestáns	[/N][Acc]	1	8570080167	100074	-2.932984884457958	2.067336374607451	12	4	10	3	TRUE	proteštánš	proteštánšot	nš	n	š	o	TRUE	3	1
-stimulánsot	stimuláns	[/N][Acc]	1	8570080167	6035	-2.932984884457958	0.8476923899754102	11	4	9	3	TRUE	štimulánš	štimulánšot	nš	n	š	o	TRUE	3	1
-szolvenst	szolvens	[/N][Acc]	1	8570080167	210	-2.932984884457958	-0.6107655897240386	9	2	8	2	TRUE	solvenš	solvenšt	nš	n	š	NA	FALSE	2	0
-őrst	őrs	[/N][Acc]	1	8570080167	14102	-2.932984884457958	1.2162958258830658	4	1	3	1	TRUE	őrš	őršt	rš	r	š	NA	FALSE	1	10
+form	lemma	xpostag	freq	corpus_size	lemma_freq	lfpm10	llfpm10	form_length	form_syl_count	lemma_length	lemma_syl_count	hunspell	lemma_transcription	form_transcription	coda	coda1	coda2	linking_vowel	linking_vowel_present	nsyl
+pénzt	pénz	[/N][Acc]	827852	8570080167	2605825	2.9849678178722816	3.482960361881654	5	1	4	1	TRUE	pénz	pénzt	nz	n	z	NA	FALSE	1
+verset	vers	[/N][Acc]	87593	8570080167	786598	2.009484516426522	2.962767953382274	6	2	4	1	TRUE	verš	veršet	rš	r	š	e	TRUE	1
+borsot	bors	[/N][Acc]	35568	8570080167	318878	1.6180745608969576	2.570639673015841	6	2	4	1	TRUE	borš	boršot	rš	r	š	o	TRUE	1
+rajzot	rajz	[/N][Acc]	30319	8570080167	352496	1.5487299885692114	2.6141693086771647	6	2	4	1	TRUE	rajz	rajzot	jz	j	z	o	TRUE	1
+sorsot	sors	[/N][Acc]	23446	8570080167	863203	1.437083876192094	3.003128056578785	6	2	4	1	TRUE	šorš	šoršot	rš	r	š	o	TRUE	1
+törzset	törzs	[/N][Acc]	13011	8570080167	274003	1.1813257924104663	2.504770433385471	7	2	5	1	TRUE	törž	töržet	rž	r	ž	e	TRUE	1
+kontinenst	kontinens	[/N][Acc]	11784	8570080167	198435	1.1383078493766168	2.3646333910531023	10	3	9	3	TRUE	kontinenš	kontinenšt	nš	n	š	NA	FALSE	3
+pácienst	páciens	[/N][Acc]	11379	8570080167	248198	1.1231192129644951	2.4618133931380193	8	3	7	3	TRUE	pácienš	pácienšt	nš	n	š	NA	FALSE	3
+incidenst	incidens	[/N][Acc]	10852	8570080167	119048	1.1025249006316007	2.142737219220279	9	3	8	3	TRUE	incidenš	incidenšt	nš	n	š	NA	FALSE	3
+komponenst	komponens	[/N][Acc]	9290	8570080167	168785	1.035030829535684	2.294348963597735	10	3	9	3	TRUE	komponenš	komponenšt	nš	n	š	NA	FALSE	3
+klienst	kliens	[/N][Acc]	7666	8570080167	155897	0.9515839304603756	2.259852873476351	7	2	6	2	TRUE	klienš	klienšt	nš	n	š	NA	FALSE	2
+pajzsot	pajzs	[/N][Acc]	7629	8570080167	64579	0.9494827304374136	1.8771064312643064	7	2	5	1	TRUE	pajž	pajžot	jž	j	ž	o	TRUE	1
+bronzot	bronz	[/N][Acc]	7413	8570080167	89560	0.937009115663784	2.0191292004490347	7	2	5	1	TRUE	bronz	bronzot	nz	n	z	o	TRUE	1
+szegmenst	szegmens	[/N][Acc]	6828	8570080167	164707	0.9013086279847382	2.2837271724942587	9	2	8	2	TRUE	segmenš	segmenšt	nš	n	š	NA	FALSE	2
+antioxidánst	antioxidáns	[/N][Acc]	5095	8570080167	164141	0.7741593038844874	2.282232190499618	12	5	11	5	TRUE	antioxidánš	antioxidánšt	nš	n	š	NA	FALSE	5
+precedenst	precedens	[/N][Acc]	4218	8570080167	16786	0.6921216909455098	1.2919623343191289	10	3	9	3	TRUE	precedenš	precedenšt	nš	n	š	NA	FALSE	3
+asszisztenst	asszisztens	[/N][Acc]	4155	8570080167	129030	0.685586143662172	2.1777058128157964	12	3	11	3	TRUE	assistenš	assistenšt	nš	n	š	NA	FALSE	3
+marsot	mars	[/N][Acc]	3236	8570080167	116843	0.5770236284822768	2.134617814705583	6	2	4	1	TRUE	marš	maršot	rš	r	š	o	TRUE	1
+variánst	variáns	[/N][Acc]	3167	8570080167	35807	0.5676631789139541	1.6209830518004236	8	3	7	3	TRUE	variánš	variánšt	nš	n	š	NA	FALSE	3
+antidepresszánst	antidepresszáns	[/N][Acc]	2838	8570080167	22055	0.5200275066634974	1.4105221776564685	16	5	15	5	FALSE	antidepressánš	antidepressánšt	nš	n	š	NA	FALSE	5
+transzparenst	transzparens	[/N][Acc]	2241	8570080167	33659	0.41745697207710336	1.5941163245991607	13	3	12	3	TRUE	transparenš	transparenšt	nš	n	š	NA	FALSE	3
+delikvenst	delikvens	[/N][Acc]	1850	8570080167	14413	0.334186843945056	1.2257695021743304	10	3	9	3	TRUE	delikvenš	delikvenšt	nš	n	š	NA	FALSE	3
+kontingenst	kontingens	[/N][Acc]	1542	8570080167	16396	0.25509948925698034	1.2817530251865064	11	3	10	3	TRUE	kontingenš	kontingenšt	nš	n	š	NA	FALSE	3
+szimpatizánst	szimpatizáns	[/N][Acc]	1497	8570080167	33396	0.2422369158850945	1.59070956792371	13	4	12	4	TRUE	simpatizánš	simpatizánšt	nš	n	š	NA	FALSE	4
+sanszot	sansz	[/N][Acc]	1292	8570080167	10458	0.17827762920110743	1.086463753035679	7	2	5	1	TRUE	šans	šansot	ns	n	s	o	TRUE	1
+referenst	referens	[/N][Acc]	1289	8570080167	64846	0.17726803289544518	1.8788983075040828	9	3	8	3	TRUE	referenš	referenšt	nš	n	š	NA	FALSE	3
+docenst	docens	[/N][Acc]	1263	8570080167	185029	0.16841846609737293	2.334254917204184	7	2	6	2	TRUE	docenš	docenšt	nš	n	š	NA	FALSE	2
+szeánszot	szeánsz	[/N][Acc]	1262	8570080167	14112	0.16807447045015764	1.2166036833297866	9	3	7	2	TRUE	seáns	seánsot	ns	n	s	o	TRUE	2
+konzulenst	konzulens	[/N][Acc]	897	8570080167	34448	0.01980755858613425	1.604179128021454	10	3	9	3	TRUE	konzulenš	konzulenšt	nš	n	š	NA	FALSE	3
+konkurenst	konkurens	[/N][Acc]	846	8570080167	61817	-0.00561452141893428	1.858123040322064	10	3	9	3	TRUE	konkurenš	konkurenšt	nš	n	š	NA	FALSE	3
+birset	birs	[/N][Acc]	789	8570080167	8783	-0.03590788124853755	1.0106579982941712	6	2	4	1	TRUE	birš	biršet	rš	r	š	e	TRUE	1
+őrsöt	őrs	[/N][Acc]	759	8570080167	14102	-0.05274310856247746	1.2162958258830658	5	2	3	1	TRUE	őrš	őršöt	rš	r	š	ö	TRUE	1
+borzot	borz	[/N][Acc]	748	8570080167	15543	-0.05908328659349648	1.258549962548826	6	2	4	1	TRUE	borz	borzot	rz	r	z	o	TRUE	1
+ágenst	ágens	[/N][Acc]	740	8570080167	17621	-0.06375316472698163	1.3130456667326265	6	2	5	2	TRUE	ágenš	ágenšt	nš	n	š	NA	FALSE	2
+mutánst	mutáns	[/N][Acc]	718	8570080167	25703	-0.07686044021565751	1.4769989317685837	7	2	6	2	TRUE	mutánš	mutánšt	nš	n	š	NA	FALSE	2
+szegmenset	szegmens	[/N][Acc]	683	8570080167	164707	-0.09856418077642524	2.2837271724942587	10	3	8	2	TRUE	segmenš	segmenšet	nš	n	š	e	TRUE	2
+konstanst	konstans	[/N][Acc]	663	8570080167	29624	-0.11147135605318469	1.5386588145834283	9	2	8	2	TRUE	konštanš	konštanšt	nš	n	š	NA	FALSE	2
+balanszot	balansz	[/N][Acc]	616	8570080167	4818	-0.14340417229353233	0.7498819112043668	9	3	7	2	TRUE	balans	balansot	ns	n	s	o	TRUE	2
+reneszánszot	reneszánsz	[/N][Acc]	616	8570080167	137912	-0.14340417229353233	2.2066171721968133	12	4	10	3	TRUE	renesáns	renesánsot	ns	n	s	o	TRUE	3
+reneszánszt	reneszánsz	[/N][Acc]	588	8570080167	137912	-0.16360755838181937	2.2066171721968133	11	3	10	3	TRUE	renesáns	renesánst	ns	n	s	NA	FALSE	3
+reagenst	reagens	[/N][Acc]	569	8570080167	7265	-0.17787261806288668	0.9282507341760824	8	3	7	3	TRUE	reagenš	reagenšt	nš	n	š	NA	FALSE	3
+csimpánzt	csimpánz	[/N][Acc]	485	8570080167	14768	-0.24724314585569415	1.236336799223879	9	2	8	2	TRUE	čimpánz	čimpánzt	nz	n	z	NA	FALSE	2
+gradienst	gradiens	[/N][Acc]	472	8570080167	7534	-0.25904288582387003	0.9440407314092908	9	3	8	3	TRUE	gradienš	gradienšt	nš	n	š	NA	FALSE	3
+borst	bors	[/N][Acc]	412	8570080167	318878	-0.3180876684248232	2.570639673015841	5	1	4	1	TRUE	borš	boršt	rš	r	š	NA	FALSE	1
+pátenst	pátens	[/N][Acc]	356	8570080167	2649	-0.38153488648508266	0.4900970738392732	7	2	6	2	TRUE	pátenš	pátenšt	nš	n	š	NA	FALSE	2
+emigránst	emigráns	[/N][Acc]	347	8570080167	25790	-0.3926554096670841	1.4784664576799798	9	3	8	3	TRUE	emigránš	emigránšt	nš	n	š	NA	FALSE	3
+protestánst	protestáns	[/N][Acc]	341	8570080167	100074	-0.4002305054654602	2.067336374607451	11	3	10	3	TRUE	proteštánš	proteštánšt	nš	n	š	NA	FALSE	3
+rezidenst	rezidens	[/N][Acc]	331	8570080167	31816	-0.4131568906822391	1.5696606935199662	9	3	8	3	TRUE	rezidenš	rezidenšt	nš	n	š	NA	FALSE	3
+sapienst	sapiens	[/N][Acc]	330	8570080167	13919	-0.4144709445800704	1.210623150379638	8	3	7	3	TRUE	šapienš	šapienšt	nš	n	š	NA	FALSE	3
+spekulánst	spekuláns	[/N][Acc]	314	8570080167	16306	-0.4360552363847429	1.279362553530054	10	3	9	3	TRUE	špekulánš	špekulánšt	nš	n	š	NA	FALSE	3
+spájzot	spájz	[/N][Acc]	307	8570080167	14198	-0.4458465089807714	1.219242287380184	7	2	5	1	TRUE	špájz	špájzot	jz	j	z	o	TRUE	1
+siemenst	siemens	[/N][Acc]	296	8570080167	44501	-0.4616931733990192	1.7153848858398786	8	3	7	3	TRUE	šiemenš	šiemenšt	nš	n	š	NA	FALSE	3
+stimulánst	stimuláns	[/N][Acc]	272	8570080167	6035	-0.4984159804237591	0.8476923899754102	10	3	9	3	TRUE	štimulánš	štimulánšt	nš	n	š	NA	FALSE	3
+determinánst	determináns	[/N][Acc]	239	8570080167	5836	-0.5545869835098202	0.8331303987634562	12	4	11	4	TRUE	determinánš	determinánšt	nš	n	š	NA	FALSE	4
+klienset	kliens	[/N][Acc]	202	8570080167	155897	-0.627633515011334	2.259852873476351	8	3	6	2	TRUE	klienš	klienšet	nš	n	š	e	TRUE	2
+briliánst	briliáns	[/N][Acc]	199	8570080167	25639	-0.6341318080482512	1.4759161978961852	9	3	8	3	TRUE	briliánš	briliánšt	nš	n	š	NA	FALSE	3
+dirigenst	dirigens	[/N][Acc]	177	8570080167	5964	-0.6850116180961512	0.8425527503229991	9	3	8	3	TRUE	dirigenš	dirigenšt	nš	n	š	NA	FALSE	3
+koefficienst	koefficiens	[/N][Acc]	167	8570080167	3396	-0.7102684133103745	0.5979827971139572	12	5	11	5	TRUE	koefficienš	koefficienšt	nš	n	š	NA	FALSE	5
+dilettánst	dilettáns	[/N][Acc]	161	8570080167	17057	-0.7261590084261081	1.2989177649986854	10	3	9	3	TRUE	dilettánš	dilettánšt	nš	n	š	NA	FALSE	3
+nüanszot	nüansz	[/N][Acc]	151	8570080167	2511	-0.7540079371647884	0.4668618282549646	8	3	6	2	FALSE	nüans	nüansot	ns	n	s	o	TRUE	2
+sorst	sors	[/N][Acc]	149	8570080167	863203	-0.7597986160456838	3.003128056578785	5	1	4	1	TRUE	šorš	šoršt	rš	r	š	NA	FALSE	1
+régenst	régens	[/N][Acc]	142	8570080167	3461	-0.7806965400749013	0.6062167148361699	7	2	6	2	TRUE	régenš	régenšt	nš	n	š	NA	FALSE	2
+jubilánst	jubiláns	[/N][Acc]	141	8570080167	1505	-0.783765771802578	0.24455161547190435	9	3	8	3	TRUE	jubilánš	jubilánšt	nš	n	š	NA	FALSE	3
+pénzet	pénz	[/N][Acc]	136	8570080167	2605825	-0.7994459760877403	3.482960361881654	6	2	4	1	TRUE	pénz	pénzet	nz	n	z	e	TRUE	1
+pasziánszt	pasziánsz	[/N][Acc]	135	8570080167	1483	-0.8026511159629518	0.2381562665704242	10	3	9	3	TRUE	pasiáns	pasiánst	ns	n	s	NA	FALSE	3
+fajanszot	fajansz	[/N][Acc]	134	8570080167	2226	-0.8058800860931502	0.4145402755407317	9	3	7	2	TRUE	fajans	fajansot	ns	n	s	o	TRUE	2
+opponenst	opponens	[/N][Acc]	131	8570080167	4905	-0.8157135888021936	0.7576541272580095	9	3	8	3	TRUE	opponenš	opponenšt	nš	n	š	NA	FALSE	3
+szeánszt	szeánsz	[/N][Acc]	131	8570080167	14112	-0.8157135888021936	1.2166036833297866	8	2	7	2	TRUE	seáns	seánst	ns	n	s	NA	FALSE	2
+transzot	transz	[/N][Acc]	122	8570080167	16280	-0.8466250537832096	1.2786695160952246	8	2	6	1	TRUE	trans	transot	ns	n	s	o	TRUE	1
+fóliánst	fóliáns	[/N][Acc]	118	8570080167	987	-0.8611028771518324	0.06133226821167893	8	3	7	3	TRUE	fóliánš	fóliánšt	nš	n	š	NA	FALSE	3
+siemenset	siemens	[/N][Acc]	117	8570080167	44501	-0.8647990227117962	1.7153848858398786	9	4	7	3	TRUE	šiemenš	šiemenšet	nš	n	š	e	TRUE	3
+szextánst	szextáns	[/N][Acc]	116	8570080167	850	-0.8685268952310394	-0.00356595874366508	9	2	8	2	TRUE	sextánš	sextánšt	nš	n	š	NA	FALSE	2
+kontinenset	kontinens	[/N][Acc]	109	8570080167	198435	-0.8955583865173342	2.3646333910531023	11	4	9	3	TRUE	kontinenš	kontinenšet	nš	n	š	e	TRUE	3
+recenzenst	recenzens	[/N][Acc]	107	8570080167	3795	-0.9036011067727482	0.6462268957735413	10	3	9	3	TRUE	recenzenš	recenzenšt	nš	n	š	NA	FALSE	3
+adszorbenst	adszorbens	[/N][Acc]	105	8570080167	1512	-0.9117955853880196	0.24656690670722983	11	3	10	3	TRUE	adsorbenš	adsorbenšt	nš	n	š	NA	FALSE	3
+balanszt	balansz	[/N][Acc]	104	8570080167	4818	-0.9159515451591774	0.7498819112043668	8	2	7	2	TRUE	balans	balanst	ns	n	s	NA	FALSE	2
+disszidenst	disszidens	[/N][Acc]	100	8570080167	4611	-0.9329848844579578	0.7308102377614497	11	3	10	3	TRUE	dissidenš	dissidenšt	nš	n	š	NA	FALSE	3
+intendánst	intendáns	[/N][Acc]	99	8570080167	4037	-0.937349689860408	0.6730738649523565	10	3	9	3	TRUE	intendánš	intendánšt	nš	n	š	NA	FALSE	3
+pasziánszot	pasziánsz	[/N][Acc]	98	8570080167	1483	-0.9417588087654628	0.2381562665704242	11	4	9	3	TRUE	pasiáns	pasiánsot	ns	n	s	o	TRUE	3
+pácienset	páciens	[/N][Acc]	98	8570080167	248198	-0.9417588087654628	2.4618133931380193	9	4	7	3	TRUE	pácienš	pácienšet	nš	n	š	e	TRUE	3
+komponenset	komponens	[/N][Acc]	95	8570080167	168785	-0.95526127916911	2.294348963597735	11	4	9	3	TRUE	komponenš	komponenšet	nš	n	š	e	TRUE	3
+abszorbenst	abszorbens	[/N][Acc]	93	8570080167	2515	-0.9645019359040228	0.4675531049339884	11	3	10	3	TRUE	absorbenš	absorbenšt	nš	n	š	NA	FALSE	3
+ministránst	ministráns	[/N][Acc]	92	8570080167	8676	-0.9691970571124026	1.0053346588841978	11	3	10	3	TRUE	miništránš	miništránšt	nš	n	š	NA	FALSE	3
+posztamenst	posztamens	[/N][Acc]	92	8570080167	2777	-0.9691970571124026	0.5105909952922998	11	3	10	3	TRUE	postamenš	postamenšt	nš	n	š	NA	FALSE	3
+kvadránst	kvadráns	[/N][Acc]	90	8570080167	2026	-0.9787423750186328	0.3736545565663038	9	2	8	2	TRUE	kvadránš	kvadránšt	nš	n	š	NA	FALSE	2
+csimpánzot	csimpánz	[/N][Acc]	81	8570080167	14768	-1.024499865579308	1.236336799223879	10	3	8	2	TRUE	čimpánz	čimpánzot	nz	n	z	o	TRUE	2
+elegánst	elegáns	[/N][Acc]	81	8570080167	374208	-1.024499865579308	2.6401281833632133	8	3	7	3	TRUE	elegánš	elegánšt	nš	n	š	NA	FALSE	3
+laboránst	laboráns	[/N][Acc]	80	8570080167	2841	-1.0298948974660145	0.520486349264978	9	3	8	3	TRUE	laboránš	laboránšt	nš	n	š	NA	FALSE	3
+szuperintendenst	szuperintendens	[/N][Acc]	80	8570080167	1540	-1.0298948974660145	0.2545358363785052	16	5	15	5	TRUE	superintendenš	superintendenšt	nš	n	š	NA	FALSE	5
+tranzienst	tranziens	[/N][Acc]	73	8570080167	6311	-1.069662024337502	0.8671132957168178	10	3	9	3	TRUE	tranzienš	tranzienšt	nš	n	š	NA	FALSE	3
+hársot	hárs	[/N][Acc]	70	8570080167	19071	-1.087886844443701	1.3473885816921616	6	2	4	1	TRUE	hárš	háršot	rš	r	š	o	TRUE	1
+konzultánst	konzultáns	[/N][Acc]	70	8570080167	5729	-1.087886844443701	0.8250939377916547	11	3	10	3	TRUE	konzultánš	konzultánšt	nš	n	š	NA	FALSE	3
+nonszenszt	nonszensz	[/N][Acc]	69	8570080167	16551	-1.0941357937207026	1.2858393542194446	10	2	9	2	TRUE	nonsens	nonsenst	ns	n	s	NA	FALSE	2
+deviánst	deviáns	[/N][Acc]	66	8570080167	16530	-1.1134409489160892	1.2852879691134895	8	3	7	3	TRUE	deviánš	deviánšt	nš	n	š	NA	FALSE	3
+spájzt	spájz	[/N][Acc]	65	8570080167	14198	-1.1200715278151023	1.219242287380184	6	1	5	1	TRUE	špájz	špájzt	jz	j	z	NA	FALSE	1
+félszet	félsz	[/N][Acc]	58	8570080167	6323	-1.169556890895021	0.8679382973552604	7	2	5	1	FALSE	féls	félset	ls	l	s	e	TRUE	1
+diverzánst	diverzáns	[/N][Acc]	50	8570080167	1603	-1.234014880121939	0.27194863789618695	10	3	9	3	TRUE	diverzánš	diverzánšt	nš	n	š	NA	FALSE	3
+infánst	infáns	[/N][Acc]	50	8570080167	360	-1.234014880121939	-0.3766823836906706	7	2	6	2	TRUE	infánš	infánšt	nš	n	š	NA	FALSE	2
+transzt	transz	[/N][Acc]	45	8570080167	16280	-1.279772370682614	1.2786695160952246	7	1	6	1	TRUE	trans	transt	ns	n	s	NA	FALSE	1
+redundánst	redundáns	[/N][Acc]	44	8570080167	8068	-1.2895322079717704	0.97378100508277	10	3	9	3	FALSE	redundánš	redundánšt	nš	n	š	NA	FALSE	3
+reprezentánst	reprezentáns	[/N][Acc]	44	8570080167	8752	-1.2895322079717704	1.0091224245313977	13	4	12	4	TRUE	reprezentánš	reprezentánšt	nš	n	š	NA	FALSE	4
+bronzt	bronz	[/N][Acc]	41	8570080167	89560	-1.3202010277382223	2.0191292004490347	6	1	5	1	TRUE	bronz	bronzt	nz	n	z	NA	FALSE	1
+referenset	referens	[/N][Acc]	40	8570080167	64846	-1.3309248931299955	1.8788983075040828	10	4	8	3	TRUE	referenš	referenšet	nš	n	š	e	TRUE	3
+sapienset	sapiens	[/N][Acc]	40	8570080167	13919	-1.3309248931299955	1.210623150379638	9	4	7	3	TRUE	šapienš	šapienšet	nš	n	š	e	TRUE	3
+traverzet	traverz	[/N][Acc]	40	8570080167	1380	-1.3309248931299955	0.20689420194327868	9	3	7	2	TRUE	traverz	traverzet	rz	r	z	e	TRUE	2
+törzst	törzs	[/N][Acc]	39	8570080167	274003	-1.3419202774314587	2.504770433385471	6	1	5	1	TRUE	törž	töržt	rž	r	ž	NA	FALSE	1
+félszt	félsz	[/N][Acc]	37	8570080167	6323	-1.3647831603909628	0.8679382973552604	6	1	5	1	FALSE	féls	félst	ls	l	s	NA	FALSE	1
+konstansot	konstans	[/N][Acc]	35	8570080167	29624	-1.388916840107682	1.5386588145834283	10	3	8	2	TRUE	konštanš	konštanšot	nš	n	š	o	TRUE	2
+spejzt	spejz	[/N][Acc]	35	8570080167	3158	-1.388916840107682	0.5664272412143176	6	1	5	1	TRUE	špejz	špejzt	jz	j	z	NA	FALSE	1
+verst	vers	[/N][Acc]	34	8570080167	786598	-1.4015059674157029	2.962767953382274	5	1	4	1	TRUE	verš	veršt	rš	r	š	NA	FALSE	1
+exponenst	exponens	[/N][Acc]	33	8570080167	860	-1.4144709445800705	0.00151356678560985	9	3	8	3	TRUE	exponenš	exponenšt	nš	n	š	NA	FALSE	3
+marst	mars	[/N][Acc]	32	8570080167	116843	-1.427834906138052	2.134617814705583	5	1	4	1	TRUE	marš	maršt	rš	r	š	NA	FALSE	1
+nonszenszet	nonszensz	[/N][Acc]	32	8570080167	16551	-1.427834906138052	1.2858393542194446	11	3	9	2	TRUE	nonsens	nonsenset	ns	n	s	e	TRUE	2
+ornamenst	ornamens	[/N][Acc]	32	8570080167	1201	-1.427834906138052	0.1465581229449482	9	3	8	3	TRUE	ornamenš	ornamenšt	nš	n	š	NA	FALSE	3
+kvócienst	kvóciens	[/N][Acc]	31	8570080167	530	-1.4416231906236852	-0.20870901485716883	9	3	8	3	TRUE	kvócienš	kvócienšt	nš	n	š	NA	FALSE	3
+tangenst	tangens	[/N][Acc]	29	8570080167	1382	-1.4705868865590015	0.20752315858022177	8	2	7	2	TRUE	tangenš	tangenšt	nš	n	š	NA	FALSE	2
+traverzt	traverz	[/N][Acc]	27	8570080167	1380	-1.5016211202989704	0.20689420194327868	8	2	7	2	TRUE	traverz	traverzt	rz	r	z	NA	FALSE	2
+tremenst	tremens	[/N][Acc]	27	8570080167	1099	-1.5016211202989704	0.10801280796553274	8	2	7	2	FALSE	tremenš	tremenšt	nš	n	š	NA	FALSE	2
+nüánszot	nüánsz	[/N][Acc]	26	8570080167	760	-1.5180115364871398	-0.05217129217716645	8	3	6	2	TRUE	nüáns	nüánsot	ns	n	s	o	TRUE	2
+asszisztenset	asszisztens	[/N][Acc]	25	8570080167	129030	-1.5350448757859203	2.1777058128157964	13	4	11	3	TRUE	assistenš	assistenšet	nš	n	š	e	TRUE	3
+antioxidánsot	antioxidáns	[/N][Acc]	24	8570080167	164141	-1.552773642746352	2.282232190499618	13	6	11	5	TRUE	antioxidánš	antioxidánšot	nš	n	š	o	TRUE	5
+formánst	formáns	[/N][Acc]	24	8570080167	616	-1.552773642746352	-0.14340417229353233	8	2	7	2	TRUE	formánš	formánšt	nš	n	š	NA	FALSE	2
+adjutánst	adjutáns	[/N][Acc]	23	8570080167	611	-1.571257048440365	-0.14694367421540358	9	3	8	3	TRUE	adjutánš	adjutánšt	nš	n	š	NA	FALSE	3
+incidenset	incidens	[/N][Acc]	23	8570080167	119048	-1.571257048440365	2.142737219220279	10	4	8	3	TRUE	incidenš	incidenšet	nš	n	š	e	TRUE	3
+szimulánst	szimuláns	[/N][Acc]	23	8570080167	612	-1.571257048440365	-0.14623346231239667	10	3	9	3	TRUE	simulánš	simulánšt	nš	n	š	NA	FALSE	3
+pajzst	pajzs	[/N][Acc]	22	8570080167	64579	-1.5905622036357516	1.8771064312643064	6	1	5	1	TRUE	pajž	pajžt	jž	j	ž	NA	FALSE	1
+komplemenst	komplemens	[/N][Acc]	21	8570080167	1090	-1.6107655897240385	0.10444161348266576	11	3	10	3	TRUE	komplemenš	komplemenšt	nš	n	š	NA	FALSE	3
+rajzt	rajz	[/N][Acc]	21	8570080167	352496	-1.6107655897240385	2.6141693086771647	5	1	4	1	TRUE	rajz	rajzt	jz	j	z	NA	FALSE	1
+variánsot	variáns	[/N][Acc]	17	8570080167	35807	-1.702535963079684	1.6209830518004236	9	4	7	3	TRUE	variánš	variánšot	nš	n	š	o	TRUE	3
+delikvenset	delikvens	[/N][Acc]	16	8570080167	14413	-1.728864901802033	1.2257695021743304	11	4	9	3	TRUE	delikvenš	delikvenšet	nš	n	š	e	TRUE	3
+hárst	hárs	[/N][Acc]	14	8570080167	19071	-1.7868568487797198	1.3473885816921616	5	1	4	1	TRUE	hárš	háršt	rš	r	š	NA	FALSE	1
+konferanszot	konferansz	[/N][Acc]	14	8570080167	849	-1.7868568487797198	-0.00407719421400516	12	4	10	3	TRUE	konferans	konferansot	ns	n	s	o	TRUE	3
+szekundánst	szekundáns	[/N][Acc]	14	8570080167	768	-1.7868568487797198	-0.04762366442644582	11	3	10	3	TRUE	sekundánš	sekundánšt	nš	n	š	NA	FALSE	3
+sanszt	sansz	[/N][Acc]	13	8570080167	10458	-1.819041532151121	1.086463753035679	6	1	5	1	TRUE	šans	šanst	ns	n	s	NA	FALSE	1
+spiránst	spiráns	[/N][Acc]	13	8570080167	124	-1.819041532151121	-0.8395631992957228	8	2	7	2	TRUE	špiránš	špiránšt	nš	n	š	NA	FALSE	2
+szignifikánst	szignifikáns	[/N][Acc]	13	8570080167	80012	-1.819041532151121	1.9701702418209468	13	4	12	4	TRUE	signifikánš	signifikánšt	nš	n	š	NA	FALSE	4
+deszcendenst	deszcendens	[/N][Acc]	12	8570080167	349	-1.853803638410333	-0.3901594574987779	12	3	11	3	TRUE	descendenš	descendenšt	nš	n	š	NA	FALSE	3
+nörszöt	nörsz	[/N][Acc]	12	8570080167	162	-1.853803638410333	-0.7234698699153269	7	2	5	1	TRUE	nörs	nörsöt	rs	r	s	ö	TRUE	1
+precedenset	precedens	[/N][Acc]	12	8570080167	16786	-1.853803638410333	1.2919623343191289	11	4	9	3	TRUE	precedenš	precedenšet	nš	n	š	e	TRUE	3
+valdenst	valdens	[/N][Acc]	12	8570080167	1061	-1.853803638410333	0.09273049944338284	8	2	7	2	FALSE	valdenš	valdenšt	nš	n	š	NA	FALSE	2
+ágenset	ágens	[/N][Acc]	12	8570080167	17621	-1.853803638410333	1.3130456667326265	7	3	5	2	TRUE	ágenš	ágenšet	nš	n	š	e	TRUE	2
+toleránst	toleráns	[/N][Acc]	11	8570080167	32053	-1.8915921992997329	1.5728837990839963	9	3	8	3	TRUE	toleránš	toleránšt	nš	n	š	NA	FALSE	3
+approximánst	approximáns	[/N][Acc]	10	8570080167	170	-1.9329848844579576	-0.7025359630796839	12	4	11	4	FALSE	approximánš	approximánšt	nš	n	š	NA	FALSE	4
+perverzt	perverz	[/N][Acc]	10	8570080167	30831	-1.9329848844579576	1.5560027267894287	8	2	7	2	TRUE	perverz	perverzt	rz	r	z	NA	FALSE	2
+birst	birs	[/N][Acc]	9	8570080167	8783	-1.978742375018633	1.0106579982941712	5	1	4	1	TRUE	birš	biršt	rš	r	š	NA	FALSE	1
+fajanszt	fajansz	[/N][Acc]	9	8570080167	2226	-1.978742375018633	0.4145402755407317	8	2	7	2	TRUE	fajans	fajanst	ns	n	s	NA	FALSE	2
+frappánst	frappáns	[/N][Acc]	9	8570080167	37305	-1.978742375018633	1.6387821598676593	9	2	8	2	TRUE	frappánš	frappánšt	nš	n	š	NA	FALSE	2
+nüanszt	nüansz	[/N][Acc]	9	8570080167	2511	-1.978742375018633	0.4668618282549646	7	2	6	2	FALSE	nüans	nüanst	ns	n	s	NA	FALSE	2
+rezultánst	rezultáns	[/N][Acc]	9	8570080167	104	-1.978742375018633	-0.9159515451591774	10	3	9	3	TRUE	rezultánš	rezultánšt	nš	n	š	NA	FALSE	3
+evolvenst	evolvens	[/N][Acc]	8	8570080167	333	-2.0298948974660145	-0.410540650951638	9	3	8	3	TRUE	evolvenš	evolvenšt	nš	n	š	NA	FALSE	3
+pátenset	pátens	[/N][Acc]	8	8570080167	2649	-2.0298948974660145	0.4900970738392732	8	3	6	2	TRUE	pátenš	pátenšet	nš	n	š	e	TRUE	2
+inverzt	inverz	[/N][Acc]	7	8570080167	14329	-2.087886844443701	1.2232309982188048	7	2	6	2	TRUE	inverz	inverzt	rz	r	z	NA	FALSE	2
+posztamenset	posztamens	[/N][Acc]	7	8570080167	2777	-2.087886844443701	0.5105909952922998	12	4	10	3	TRUE	postamenš	postamenšet	nš	n	š	e	TRUE	3
+revánst	reváns	[/N][Acc]	7	8570080167	2929	-2.087886844443701	0.5337344872236408	7	2	6	2	TRUE	revánš	revánšt	nš	n	š	NA	FALSE	2
+csuszpájzt	csuszpájz	[/N][Acc]	6	8570080167	88	-2.1548336340743144	-0.9885022123077892	10	2	9	2	TRUE	čuspájz	čuspájzt	jz	j	z	NA	FALSE	2
+manipulánst	manipuláns	[/N][Acc]	6	8570080167	125	-2.1548336340743144	-0.8360748714499014	11	4	10	4	FALSE	manipulánš	manipulánšt	nš	n	š	NA	FALSE	4
+mutánsot	mutáns	[/N][Acc]	6	8570080167	25703	-2.1548336340743144	1.4769989317685837	8	3	6	2	TRUE	mutánš	mutánšot	nš	n	š	o	TRUE	2
+régenset	régens	[/N][Acc]	6	8570080167	3461	-2.1548336340743144	0.6062167148361699	8	3	6	2	TRUE	régenš	régenšet	nš	n	š	e	TRUE	2
+tremenset	tremens	[/N][Acc]	6	8570080167	1099	-2.1548336340743144	0.10801280796553274	9	3	7	2	FALSE	tremenš	tremenšet	nš	n	š	e	TRUE	2
+extravagánst	extravagáns	[/N][Acc]	5	8570080167	22582	-2.234014880121939	1.4207775186092415	12	4	11	4	TRUE	extravagánš	extravagánšt	nš	n	š	NA	FALSE	4
+konferanszt	konferansz	[/N][Acc]	5	8570080167	849	-2.234014880121939	-0.00407719421400516	11	3	10	3	TRUE	konferans	konferanst	ns	n	s	NA	FALSE	3
+pedánst	pedáns	[/N][Acc]	5	8570080167	5715	-2.234014880121939	0.8240313502733427	7	2	6	2	TRUE	pedánš	pedánšt	nš	n	š	NA	FALSE	2
+rezolvenst	rezolvens	[/N][Acc]	5	8570080167	56	-2.234014880121939	-1.1847968574517571	10	3	9	3	TRUE	rezolvenš	rezolvenšt	nš	n	š	NA	FALSE	3
+disszonánst	disszonáns	[/N][Acc]	4	8570080167	5491	-2.3309248931299953	0.806666559251419	11	3	10	3	TRUE	dissonánš	dissonánšt	nš	n	š	NA	FALSE	3
+docenset	docens	[/N][Acc]	4	8570080167	185029	-2.3309248931299953	2.334254917204184	8	3	6	2	TRUE	docenš	docenšet	nš	n	š	e	TRUE	2
+forszot	forsz	[/N][Acc]	4	8570080167	275	-2.3309248931299953	-0.4936521906276952	7	2	5	1	TRUE	fors	forsot	rs	r	s	o	TRUE	1
+fóliánsot	fóliáns	[/N][Acc]	4	8570080167	987	-2.3309248931299953	0.06133226821167893	9	4	7	3	TRUE	fóliánš	fóliánšot	nš	n	š	o	TRUE	3
+koefficienset	koefficiens	[/N][Acc]	4	8570080167	3396	-2.3309248931299953	0.5979827971139572	13	6	11	5	TRUE	koefficienš	koefficienšet	nš	n	š	e	TRUE	5
+markánst	markáns	[/N][Acc]	4	8570080167	103287	-2.3309248931299953	2.0810607789440447	8	2	7	2	TRUE	markánš	markánšt	nš	n	š	NA	FALSE	2
+trankvillánst	trankvilláns	[/N][Acc]	4	8570080167	149	-2.3309248931299953	-0.7597986160456838	13	3	12	3	TRUE	trankvillánš	trankvillánšt	nš	n	š	NA	FALSE	3
+dezinficienst	dezinficiens	[/N][Acc]	3	8570080167	201	-2.455863629738295	-0.629788827037469	13	5	12	5	FALSE	dezinficienš	dezinficienšt	nš	n	š	NA	FALSE	5
+efficienst	efficiens	[/N][Acc]	3	8570080167	194	-2.455863629738295	-0.6451831545277318	10	4	9	4	TRUE	efficienš	efficienšt	nš	n	š	NA	FALSE	4
+figuránst	figuráns	[/N][Acc]	3	8570080167	265	-2.455863629738295	-0.50973901052115	9	3	8	3	TRUE	figuránš	figuránšt	nš	n	š	NA	FALSE	3
+hidránst	hidráns	[/N][Acc]	3	8570080167	150	-2.455863629738295	-0.7568936254022766	8	2	7	2	TRUE	hidránš	hidránšt	nš	n	š	NA	FALSE	2
+kontingenset	kontingens	[/N][Acc]	3	8570080167	16396	-2.455863629738295	1.2817530251865064	12	4	10	3	TRUE	kontingenš	kontingenšet	nš	n	š	e	TRUE	3
+latenst	latens	[/N][Acc]	3	8570080167	2653	-2.455863629738295	0.4907523655243713	7	2	6	2	TRUE	latenš	latenšt	nš	n	š	NA	FALSE	2
+majoránst	majoráns	[/N][Acc]	3	8570080167	62	-2.455863629738295	-1.140593194959704	9	3	8	3	TRUE	majoránš	majoránšt	nš	n	š	NA	FALSE	3
+reagenset	reagens	[/N][Acc]	3	8570080167	7265	-2.455863629738295	0.9282507341760824	9	4	7	3	TRUE	reagenš	reagenšet	nš	n	š	e	TRUE	3
+spejzet	spejz	[/N][Acc]	3	8570080167	3158	-2.455863629738295	0.5664272412143176	7	2	5	1	TRUE	špejz	špejzet	jz	j	z	e	TRUE	1
+szimpatizánsot	szimpatizáns	[/N][Acc]	3	8570080167	33396	-2.455863629738295	1.59070956792371	14	5	12	4	TRUE	simpatizánš	simpatizánšot	nš	n	š	o	TRUE	4
+vágánst	vágáns	[/N][Acc]	3	8570080167	327	-2.455863629738295	-0.4184371317976717	7	2	6	2	FALSE	vágánš	vágánšt	nš	n	š	NA	FALSE	2
+antidepresszánsot	antidepresszáns	[/N][Acc]	2	8570080167	22055	-2.6319548887939765	1.4105221776564685	17	6	15	5	FALSE	antidepressánš	antidepressánšot	nš	n	š	o	TRUE	5
+arrogánst	arrogáns	[/N][Acc]	2	8570080167	20248	-2.6319548887939765	1.37339724769224	9	3	8	3	TRUE	arrogánš	arrogánšt	nš	n	š	NA	FALSE	3
+flagellánst	flagelláns	[/N][Acc]	2	8570080167	344	-2.6319548887939765	-0.39642644188642767	11	3	10	3	TRUE	flagellánš	flagellánšt	nš	n	š	NA	FALSE	3
+komplemenset	komplemens	[/N][Acc]	2	8570080167	1090	-2.6319548887939765	0.10444161348266576	12	4	10	3	TRUE	komplemenš	komplemenšet	nš	n	š	e	TRUE	3
+konszonánst	konszonáns	[/N][Acc]	2	8570080167	405	-2.6319548887939765	-0.3255298612432893	11	3	10	3	TRUE	konsonánš	konsonánšt	nš	n	š	NA	FALSE	3
+laxánst	laxáns	[/N][Acc]	2	8570080167	36	-2.6319548887939765	-1.3766823836906703	7	2	6	2	FALSE	laxánš	laxánšt	nš	n	š	NA	FALSE	2
+mendikánst	mendikáns	[/N][Acc]	2	8570080167	64	-2.6319548887939765	-1.1268049104740707	10	3	9	3	TRUE	mendikánš	mendikánšt	nš	n	š	NA	FALSE	3
+nüánszt	nüánsz	[/N][Acc]	2	8570080167	760	-2.6319548887939765	-0.05217129217716645	7	2	6	2	TRUE	nüáns	nüánst	ns	n	s	NA	FALSE	2
+tangenset	tangens	[/N][Acc]	2	8570080167	1382	-2.6319548887939765	0.20752315858022177	9	3	7	2	TRUE	tangenš	tangenšet	nš	n	š	e	TRUE	2
+borzt	borz	[/N][Acc]	1	8570080167	15543	-2.932984884457958	1.258549962548826	5	1	4	1	TRUE	borz	borzt	rz	r	z	NA	FALSE	1
+denunciánst	denunciáns	[/N][Acc]	1	8570080167	104	-2.932984884457958	-0.9159515451591774	11	4	10	4	TRUE	denunciánš	denunciánšt	nš	n	š	NA	FALSE	4
+forszt	forsz	[/N][Acc]	1	8570080167	275	-2.932984884457958	-0.4936521906276952	6	1	5	1	TRUE	fors	forst	rs	r	s	NA	FALSE	1
+fulminánst	fulmináns	[/N][Acc]	1	8570080167	464	-2.932984884457958	-0.266466903903077	10	3	9	3	TRUE	fulminánš	fulminánšt	nš	n	š	NA	FALSE	3
+korreszpondenst	korreszpondens	[/N][Acc]	1	8570080167	3	-2.932984884457958	-2.455863629738295	15	4	14	4	TRUE	korrespondenš	korrespondenšt	nš	n	š	NA	FALSE	4
+nörszt	nörsz	[/N][Acc]	1	8570080167	162	-2.932984884457958	-0.7234698699153269	6	1	5	1	TRUE	nörs	nörst	rs	r	s	NA	FALSE	1
+protestánsot	protestáns	[/N][Acc]	1	8570080167	100074	-2.932984884457958	2.067336374607451	12	4	10	3	TRUE	proteštánš	proteštánšot	nš	n	š	o	TRUE	3
+stimulánsot	stimuláns	[/N][Acc]	1	8570080167	6035	-2.932984884457958	0.8476923899754102	11	4	9	3	TRUE	štimulánš	štimulánšot	nš	n	š	o	TRUE	3
+szolvenst	szolvens	[/N][Acc]	1	8570080167	210	-2.932984884457958	-0.6107655897240386	9	2	8	2	TRUE	solvenš	solvenšt	nš	n	š	NA	FALSE	2
+őrst	őrs	[/N][Acc]	1	8570080167	14102	-2.932984884457958	1.2162958258830658	4	1	3	1	TRUE	őrš	őršt	rš	r	š	NA	FALSE	1
