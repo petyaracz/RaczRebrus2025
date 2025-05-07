@@ -58,12 +58,12 @@ változó = c(
   '-ns',
   'szótagok száma',
   'első msh: n',
+  'log gyakoriság',
   'második msh: s',
   'első msh: r',
-  'log gyakoriság',
   'második msh: sz',
-  'első msh: j',
   'második msh: z',
+  'első msh: j',
   'második msh: zs',
   'első msh: l'
 )
@@ -156,8 +156,8 @@ ggsave('fig/rf.png', dpi = 1200, height = 3, width = 3)
 p1
 ggsave('fig/distro.png', dpi = 1200, height = 9, width = 3.5)
 
-p2 / p3 + plot_annotation(tag_levels = 'i')
-ggsave('fig/relationships.png', dpi = 1200, height = 6, width = 4)
+(p2 / p3) | p4 + plot_annotation(tag_levels = 'i')
+ggsave('fig/relationships.png', dpi = 1200, height = 6, width = 6)
 
 p5 / p6
 ggsave('fig/asymmetries.png', dpi = 1200, height = 6, width = 4)

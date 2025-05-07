@@ -36,6 +36,7 @@ my_grid = crossing(
 
 myRF = function(my_mtry, my_nodesize, my_maxnodes){
   randomForest(
+    ntree = 1500,
     x = X, 
     y = y,
     mtry = my_mtry, 
