@@ -66,6 +66,7 @@ dummy_pred = rep(median(y), length(y))
 ss_total = sum((y - mean(y))^2)  # Total Sum of Squares
 ss_residual = sum((y - dummy_pred)^2)  # Residual Sum of Squares
 rsq = 1 - (ss_residual / ss_total) # nice
+# -.06
 
 # -- write -- #
 

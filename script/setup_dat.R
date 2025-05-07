@@ -74,7 +74,7 @@ compounds = d |>
 compounds = compounds[!compounds %in% c('rajz','mars')]
 
 # not nouns
-not_nouns = c('gyermekkelpénz','különbözőantioxidáns','örülsz','kérsz','bírsz','vélsz','akarsz','ajz','ars','beszelsz','érsz','fájsz','fejelsz','fejsz','gyors','írsz','kélsz','manipulálsz','mersz','marsz','nyers','ócsárolsz','szarsz','remélsz','találsz','újjáélsz','ülsz','válsz','vélsz','vonsz','körbejársz','akarsz','ajz','ars','beszelsz','érsz','fejelsz','használsz','írsz','kélsz','körbejársz','marsz','nyersz','ócsárolsz','remélsz','szarsz','találsz','újjáélsz','válsz','vélsz','vonz','vonsz','társ', 'fals', 'torz', 'gáláns', 'domináns', 'pikáns', 'buzeráns')
+not_nouns = c('gyermekkelpénz','különbözőantioxidáns','örülsz','kérsz','bírsz','vélsz','akarsz','ajz','ars','beszelsz','érsz','fájsz','fejelsz','fejsz','gyors','írsz','kélsz','manipulálsz','mersz','marsz','nyers','ócsárolsz','szarsz','remélsz','találsz','újjáélsz','ülsz','válsz','vélsz','vonsz','körbejársz','akarsz','ajz','ars','beszelsz','érsz','fejelsz','használsz','írsz','kélsz','körbejársz','marsz','nyersz','ócsárolsz','remélsz','szarsz','találsz','újjáélsz','válsz','vélsz','vonz','vonsz','társ', 'fals', 'torz', 'gáláns', 'domináns', 'pikáns', 'buzeráns', 'siemens')
 
 # also compounds
 also_compounds = '.(szimpatizáns|determináns|antioxidáns|szimpatizáns|reprezentáns|prominens|koefficiens|koncipiens)$'
