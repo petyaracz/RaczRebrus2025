@@ -6,12 +6,16 @@
 | -- | -- |
 | script/corpus_draws.R | draw forms from webcorpus2 frequency list |
 | script/setup_dat.R | filter for accusative nouns ending in [lrjn][sšzž](V)t |
-| script/eda.R | exploratory data analysis |
-| script/modelling.R | modelling code |
+| script/uesz_ns.R | draws from the etymology dictionary for plot 2 |
+| script/viz.R | plots |
+| script/rf.R | random forest modelling code |
 | dat/long.tsv | long data, see script/setup_dat |
 | dat/wide.tsv | wide data, see script/setup_dat and below |
 | dat/past_acc... | corpus draws, see script/corpus_draws |
 | dat/noun_... | corpus draws, see script/corpus_draws |
+| dat/rf... | random forest varimp and best hyperparameters |
+| dat/uesz... | etymology data |
+| dat/sources_gpt4 | llm suggestions for etym source languages |
 
 
 ### Dict
@@ -27,7 +31,6 @@ long.tsv
 | coda2 | second c of coda | 
 | lemma_freq | | 
 | llfpm10 lemma log freq per million | 
-| neighbourhood_size n nouns in webcorpus2 data that have freq > median(freq) and are 1 edit distance from lemma | 
 | nsyl | |
 | corpus_size | size of webcorpus2 in tokens | 
 | lv_word | form w/o linking vowel ("fajanszt") | 
