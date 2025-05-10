@@ -122,14 +122,14 @@ p3 = w |>
   scale_y_continuous(sec.axis = sec_axis(trans = ~ plogis(.), name = 'p(klienset)', breaks = c(.01,.1,.5,.9,.99)), name = 'log (klienset / klienst)')# +
   # theme(axis.text.x.top = element_blank(), axis.ticks.x.top = element_blank(), axis.title.x.top = element_blank())
 
-# p4 = w |> 
-#   ggplot(aes(lv_log_odds,llfpm10)) +
-#   geom_point() +
-#   geom_smooth(method = 'lm') +
-#   theme_bw() +
-#   scale_x_continuous(sec.axis = sec_axis(trans = ~ plogis(.), name = 'p(klienset)', breaks = c(.01,.1,.5,.9,.99)), name = 'log (klienset / klienst)') +
-#   scale_y_continuous(sec.axis = sec_axis(trans = ~ exp(.), name = expression(paste("tő gyakoriság / ", 10^6, " szó")), breaks = c(1,2,5,10,20,30)), name = expression(paste('log (tő gyakoriság / ', 10^6, ' szó)')))# +
-  #theme(axis.text.x.top = element_blank(), axis.ticks.x.top = element_blank(), axis.title.x.top = element_blank())
+p4 = w |>
+  ggplot(aes(lv_log_odds,llfpm10)) +
+  geom_point() +
+  geom_smooth(method = 'lm') +
+  theme_bw() +
+  scale_x_continuous(sec.axis = sec_axis(trans = ~ plogis(.), name = 'p(klienset)', breaks = c(.01,.1,.5,.9,.99)), name = 'log (klienset / klienst)') +
+  scale_y_continuous(sec.axis = sec_axis(trans = ~ exp(.), name = expression(paste("tő gyakoriság / ", 10^6, " szó")), breaks = c(1,2,5,10,20,30)), name = expression(paste('log (tő gyakoriság / ', 10^6, ' szó)')))# +
+theme(axis.text.x.top = element_blank(), axis.ticks.x.top = element_blank(), axis.title.x.top = element_blank())
 
 p5 = w |> 
   count(coda, name = 'coda_count') |> 
@@ -159,7 +159,7 @@ p6 = w |>
   xlab('tő szótagszáma') +
   ylab('tövek száma') +
   ylim(0,32) +
-  theme(legend.position = 'top') +
+  theme(legend.position = 'bottom') +
   scale_fill_colorblind() +
   labs(fill = 'tő végződés')
 
@@ -174,8 +174,11 @@ p7 = uesz_df |>
 
 # -- print -- #
 
-p5 + p6 + p2 + p3 + p0 + plot_annotation(tag_levels = 'A') + plot_layout(ncol = 2)
-ggsave('fig/data.png', dpi = 1200, height = 9, width = 7)
-
+p5 / p6
+ggsave('fig/data1.png', dpi = 1200, height = 5, width = 4)
+p2 / p3 / p4
+ggsave('fig/data2.png', dpi = 1200, height = 8, width = 4)
+p0
+ggsave('fig/data3.png', dpi = 1200, height = 4, width = 3)
 p7
 ggsave('fig/borrowings.png', dpi = 1200, height = 4, width = 4)
