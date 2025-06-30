@@ -175,10 +175,10 @@ p7 = uesz_df |>
 # -- print -- #
 
 p5 / p6
-ggsave('fig/data1.png', dpi = 1200, height = 5, width = 4)
+ggsave('fig/data1.png', height = 5, width = 4, dpi = 'print')
 p2 / p3 / p4
-ggsave('fig/data2.png', dpi = 1200, height = 8, width = 4)
+ggsave('fig/data2.png', height = 8, width = 4, dpi = 'print')
 p0
-ggsave('fig/data3.png', dpi = 1200, height = 4, width = 3)
+ggsave('fig/data3.png', height = 4, width = 3, dpi = 'print')
 p7
-ggsave('fig/borrowings.png', dpi = 1200, height = 4, width = 4)
+ggsave('fig/borrowings.png', height = 4, width = 4, dpi = 'print')
