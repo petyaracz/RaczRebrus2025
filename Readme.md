@@ -1,3 +1,9 @@
+
+
+[![DOI](https://zenodo.org/badge/852444510.svg)](https://doi.org/10.5281/zenodo.17575052)
+
+
+
 ## linking vowels in Hungarian
 
 ### Struc
